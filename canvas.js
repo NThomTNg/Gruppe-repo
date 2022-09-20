@@ -1,0 +1,66 @@
+let canvasNo = document.querySelector("#norge");
+let c1 = canvasNo.getContext("2d");
+
+c1.fillStyle = "#FFFFFF";
+c1.fillRect(0,0,220,150);
+c1.fillStyle = "#BA0C2F";
+c1.fillRect(0,0,60,60);
+c1.fillStyle = "#BA0C2F";
+c1.fillRect(0,100,60,60);
+c1.fillStyle = "#BA0C2F";
+c1.fillRect(100,0,120,60);
+c1.fillStyle = "#BA0C2F";
+c1.fillRect(100,100,120,60);
+c1.fillStyle = "#00205B";
+c1.fillRect(70,0,20,150);
+c1.fillStyle = "#00205B";
+c1.fillRect(0,70,220,20);
+
+let canvasSe = document.querySelector("#sverige");
+let c2 = canvasSe.getContext("2d");
+
+c2.fillStyle = "#006AA7"
+c2.fillRect(0,0,75,60);
+c2.fillStyle = "#006AA7"
+c2.fillRect(0,90,75,60);
+c2.fillStyle = "#006AA7"
+c2.fillRect(105,0,135,60);
+c2.fillStyle = "#006AA7"
+c2.fillRect(105,90,135,60);
+c2.fillStyle = "#FECC02"
+c2.fillRect(0,60,240,30);
+c2.fillStyle = "#FECC02"
+c2.fillRect(75,0,30,150);
+
+let canvasFn = document.querySelector("#finland");
+let c3 = canvasFn.getContext("2d");
+
+c3.fillStyle = "#FFFFFF";
+c3.fillRect(0,0,70, 55);
+c3.fillStyle = "#FFFFFF";
+c3.fillRect(0,97,70, 53);
+c3.fillStyle = "#FFFFFF";
+c3.fillRect(112,0,140, 55);
+c3.fillStyle = "#FFFFFF";
+c3.fillRect(112,97,140, 53);
+c3.fillStyle = "#002F6C";
+c3.fillRect(70,0,42, 150);
+c3.fillStyle = "#002F6C";
+c3.fillRect(0,55,252, 42);
+
+
+let canvasF = document.querySelector("#fin");
+let c4 = canvasFn.getContext("2d");
+
+c4.fillStyle = "#FFFFFF";
+c4.fillRect(0,0,70, 55);
+c4.fillStyle = "#FFFFFF";
+c4.fillRect(0,97,70, 53);
+c4.fillStyle = "#FFFFFF";
+c4.fillRect(112,0,140, 55);
+c4.fillStyle = "#FFFFFF";
+c4.fillRect(112,97,140, 53);
+c4.fillStyle = "#002F6C";
+c4.fillRect(70,0,42, 150);
+c4.fillStyle = "#002F6C";
+c4.fillRect(0,55,252, 42);
