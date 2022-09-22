@@ -1,17 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Flagg</title>
-    <meta charSet="UTF-8">
-    <meta name="author" content="Gruppe 10A">
-    <style>
-    </style>
+    <meta charset="UTF-8">
+    <title>Gruppe 10A Canvas</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="canvasFlagg.css">
 </head>
 <body>
-<h1>Test</h1>
-<canvas id="myCanvas" width="400" height="300" style="border:1px solid #d3d3d3;">
-    Your browser does not support the HTML canvas tag.
-</canvas>
+
+<div class="norge">
+    <h1>Flagget av Norge, av Gruppe 10-A</h1>
+    <canvas id="myCanvas" width="400" height="300" style="border:1px solid #d3d3d3;">
+        Your browser does not support the HTML canvas tag.
+    </canvas>
+</div>
+
 
 <script>
     var c = document.getElementById("myCanvas");
@@ -24,8 +27,8 @@
 
     ctx.beginPath();
     ctx.fillStyle = "black";
-    ctx.moveTo(150, 300);
-    ctx.lineTo(150, 150);
+    ctx.moveTo(150,300);
+    ctx.lineTo(150,150);
     ctx.fill();
     ctx.stroke();
 
@@ -62,7 +65,6 @@
     ctx.beginPath();
     ctx
 </script>
-
 
 </body>
 </html>
