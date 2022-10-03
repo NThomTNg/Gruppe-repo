@@ -2,9 +2,25 @@
 <h1>Gruppe 10A</h1>
 
 
-|Nhan Thomas Trong Nguyen| Omar Passi  | Samet Demirezen | Håkon Hervold | Anastasia Katanova | Sander Halvorsen | Kristin Svensson | Nora Lohne |
+|Nhan Thomas Trong Nguyen| Omar Passi  | Samet  Demirezen | Håkon Hervold | Anastasia Katanova | Sander Halvorsen | Kristin Svensson | Nora Lohne |
 | ----------- | ------------- | ------------- | ----------------- | -----------------| -------------- | -------------- | ------------- | 
 | https://github.com/SSneakySnek | https://github.com/Omarp321 | https://github.com/sametdemirezen | https://github.com/hakonfly | https://github.com/anastasiak111 | https://github.com/Sanderhalvors1 | https://github.com/kristintintin | https://github.com/NoraGith | 
 
+Anastasia – lage individuelt minst et flagg med 1 fordelt metode (P-ELEMENT I <STYLE>)
+Sander – lage individuelt minst et flagg med 1 fordelt metode (P-ELEMENT I <STYLE>)
+Kristin – lage individuelt minst et flagg med 1 fordelt metode (P-ELEMENT I <STYLE>)
+Nora – lage individuelt minst et flagg med 1 fordelt metode (CSS STYLE)
+Håkon – lage individuelt minst et flagg med 1 fordelt metode (CSS STYLE)
+Thomas – lage individuelt minst et flagg med 1 fordelt metode (CANVAS) + GITHUB ANSVAR
+Samet – lage individuelt minst et flagg med 1 fordelt metode (CANVAS)
+Omar – lage individuelt minst et flagg med 1 fordelt metode (CANVAS)
+Alle har lagt inn sitt arbeid i mappen sin på repository 
 
-Startsprosessen var først vanskelig. Vi hadde lite grunnleggende kunnskap om hvordan Git og Github fungerte, så vi måtte lære det ut av å se på videoer. 3 av oss fikk god grunnleggende forståelse på hvordan man delte repository og hvordan man skulle gjøre push og pull request. Det var tekniske vanskeligheter med det men til slutt klarte vi alle å komme inn på en felles repository. Eksempel på vanskelighetene var at noen hadde MAC, og noen hadde Windows, som krevde at vi måtte lære oss hvordan man brukte forskjellige commando lines og hvordan man koblet seg på begge operativsystemene. Som gruppe ville vi sagt at vi ligger på en 3 av 5 når det gjelder hvor mye vi forstår git og github. Ville vært fint hvis vi ble lært av det direkte av foreleserne, og videoene som vi fikk var litt krølete og vanskelig å følge med på. 
+Reflektering over metodene 
+P – denne metoden var forvirrende fordi p element har begrenset muligheter, det brukes til tekst ikke visuelle bilder. Alle med denne metoden lagde et simpelt flagg med bare tre farger, i seg selv var det enkelt. 
+CSS – denne metoden var noe lettere å bruke og mer oversiktlig. Også i denne modellen skulle p-element benyttes, noe som gjør denne metoden begrenset å bruke.  
+CANVAS – Denne metoden var den letteste å bruke av de metodene over. Fordelen med denne metoden er muligheten for å lage flere detaljer. Samtidig er det flere alternativer på hvilke metoder man vil gå frem med. 
+
+5 
+a)	Samet og Thomas har holdt på med GitHub
+b)	Relevnt hovedoppgave har vært at alle individuelt lager et flagg med fordelt metode 
