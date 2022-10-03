@@ -32,5 +32,5 @@ CSS – Denne metoden var noe lettere å bruke og mer oversiktlig. Også i denne
 CANVAS – Denne metoden var den letteste å bruke av de metodene over. Fordelen med denne metoden er muligheten for å lage flere detaljer. Samtidig er det flere alternativer på hvilke metoder man vil gå frem med og man er ikke begrenset som de andre metodene. Eneste negative var å komme i gang i å forstå denne metoden.
 
 5 
-a)	Samet og Thomas har holdt på med GitHub
+a)	Samet, Omar og Thomas har holdt på med GitHub
 b)	Relevant hovedoppgave har vært at alle individuelt lager et flagg med fordelt metode 
