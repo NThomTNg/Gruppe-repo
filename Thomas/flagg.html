@@ -5,21 +5,30 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Flag project</title>
   </head>
+  <style>
+    h1 {
+      text-align: center;
+    }
+
+    h2 {
+      text-align: center;
+    }
+  </style>
   <body>
-    <h1 style="font-family: verdana">Flag prosjekt</h1>
-    <p style="font-size: 120%">Liste av flag fra land over alt</p>
+    <h1>Flag Prosjekt</h1>
+    <h2>Liste av flag fra land over alt</h2>
     <canvas
       id="myCanvas"
-      width="700"
+      width="1820"
       height="600"
       style="border: 1px solid grey"
       >Your browser does not support the canvas element.
     </canvas>
 
     <script>
-      var canvas = document.getElementById("myCanvas"); //Ukraine
+      //Ukraine
+      var canvas = document.getElementById("myCanvas");
       var ctx = canvas.getContext("2d");
       ctx.fillStyle = "#ffd700";
       ctx.fillRect(0, 50, 150, 50);
@@ -30,62 +39,45 @@
       ctx.fillRect(0, 0, 150, 50);
       ctx.beginPath();
 
-      var canvas = document.getElementById("myCanvas");
-      var ctx = canvas.getContext("2d");
       ctx.font = "30px Arial";
       ctx.fillStyle = "black";
       ctx.fillText("Ukraina", 20, 130);
 
-      var canvas = document.getElementById("myCanvas"); //France
-      var ctx = canvas.getContext("2d");
+      //France
       ctx.fillStyle = "#0055A4";
       ctx.fillRect(170, 0, 50, 100);
       ctx.beginPath();
 
-      var canvas = document.getElementById("myCanvas");
-      var ctx = canvas.getContext("2d");
       ctx.fillStyle = "#FFFFFF";
       ctx.fillRect(230, 0, 60, 100);
       ctx.beginPath();
 
-      var canvas = document.getElementById("myCanvas");
-      var ctx = canvas.getContext("2d");
       ctx.fillStyle = "#EF4135";
       ctx.fillRect(260, 0, 50, 100);
       ctx.beginPath();
 
-      var canvas = document.getElementById("myCanvas");
-      var ctx = canvas.getContext("2d");
       ctx.font = "30px Arial";
       ctx.fillStyle = "black";
       ctx.fillText("Frankrike", 180, 130);
 
-      var canvas = document.getElementById("myCanvas"); //Benin
-      var ctx = canvas.getContext("2d");
+      //Benin
       ctx.fillStyle = "#008850";
-      ctx.fillRect(330, 0, 60, 100);
+      ctx.fillRect(330, 00, 60, 100);
       ctx.beginPath();
 
-      var canvas = document.getElementById("myCanvas");
-      var ctx = canvas.getContext("2d");
       ctx.fillStyle = " #FCD20F";
       ctx.fillRect(390, 0, 100, 50);
       ctx.beginPath();
 
-      var canvas = document.getElementById("myCanvas");
-      var ctx = canvas.getContext("2d");
       ctx.fillStyle = "#E90929";
       ctx.fillRect(390, 50, 100, 50);
       ctx.beginPath();
 
-      var canvas = document.getElementById("myCanvas");
-      var ctx = canvas.getContext("2d");
       ctx.font = "30px Arial";
       ctx.fillStyle = "black";
       ctx.fillText("Benin", 370, 130);
 
-      var canvas = document.getElementById("myCanvas"); //Norway
-      var ctx = canvas.getContext("2d");
+      //Norway
       ctx.beginPath();
       ctx.fillStyle = "#BA0C2F";
       ctx.rect(0, 253, 55, 50);
@@ -116,14 +108,11 @@
       ctx.rect(63, 173, 15, 130);
       ctx.fill();
 
-      var canvas = document.getElementById("myCanvas");
-      var ctx = canvas.getContext("2d");
       ctx.font = "30px Arial";
       ctx.fillStyle = "black";
       ctx.fillText("Norge", 30, 334);
 
-      var canvas = document.getElementById("myCanvas"); //Tjekkia
-      var ctx = canvas.getContext("2d");
+      //Tjekkia
       ctx.fillStyle = "#D7141A";
       ctx.fillRect(220, 244, 150, 60);
       ctx.beginPath();
@@ -135,11 +124,34 @@
       ctx.lineTo(300, 245);
       ctx.fill();
 
-      var canvas = document.getElementById("myCanvas");
-      var ctx = canvas.getContext("2d");
       ctx.font = "30px Arial";
       ctx.fillStyle = "black";
       ctx.fillText("Tjekkia", 250, 334);
+
+      //Vietnam
+      ctx.fillStyle = "#da251d ";
+      ctx.fillRect(0, 390, 190, 120);
+      ctx.beginPath();
+
+      ctx.fillStyle = "#ffff00";
+      ctx.beginPath();
+      ctx.moveTo(70, 475);
+      ctx.lineTo(100, 410);
+      ctx.lineTo(120, 460);
+      ctx.lineTo(110, 440);
+      ctx.lineTo(130, 475);
+      ctx.lineTo(100, 460);
+      ctx.lineTo(70, 475);
+      ctx.lineTo(100, 450);
+      ctx.lineTo(50, 440);
+      ctx.lineTo(170, 440);
+      ctx.lineTo(140, 440);
+      ctx.closePath();
+      ctx.fill();
+
+      ctx.font = "30px Arial";
+      ctx.fillStyle = "black";
+      ctx.fillText("Vietnam", 40, 540);
     </script>
   </body>
 </html>
