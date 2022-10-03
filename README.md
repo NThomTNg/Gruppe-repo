@@ -24,10 +24,13 @@ Omar – lage individuelt minst et flagg med 1 fordelt metode (CANVAS)
 
 Alle har lagt inn sitt arbeid i mappen sin på repository 
 Reflektering over metodene 
+  
 P – denne metoden var forvirrende fordi p element har begrenset muligheter, det brukes til tekst ikke visuelle bilder. Alle med denne metoden lagde et simpelt flagg med bare tre farger, i seg selv var det enkelt. 
-CSS – denne metoden var noe lettere å bruke og mer oversiktlig. Også i denne modellen skulle p-element benyttes, noe som gjør denne metoden begrenset å bruke.  
-CANVAS – Denne metoden var den letteste å bruke av de metodene over. Fordelen med denne metoden er muligheten for å lage flere detaljer. Samtidig er det flere alternativer på hvilke metoder man vil gå frem med. 
+  
+CSS – Denne metoden var noe lettere å bruke og mer oversiktlig. Også i denne modellen skulle p-element benyttes, noe som gjør denne metoden begrenset å bruke.  
+  
+CANVAS – Denne metoden var den letteste å bruke av de metodene over. Fordelen med denne metoden er muligheten for å lage flere detaljer. Samtidig er det flere alternativer på hvilke metoder man vil gå frem med og man er ikke begrenset som de andre metodene. Eneste negative var å komme i gang i å forstå denne metoden.
 
 5 
 a)	Samet og Thomas har holdt på med GitHub
-b)	Relevnt hovedoppgave har vært at alle individuelt lager et flagg med fordelt metode 
+b)	Relevant hovedoppgave har vært at alle individuelt lager et flagg med fordelt metode 
