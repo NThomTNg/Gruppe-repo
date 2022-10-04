@@ -34,10 +34,10 @@ b) Relevant hovedoppgave har vært at alle individuelt lager et flagg med fordel
 
 c) Det var vanskeligere og mer forrvirrende å komme i gang med oppgaven, oplasting på github, branshes og pull og push request, for de som ikke hadde noe erfaring med koder fra før av. de som hadde erfaring fra før fant det også vanskelig å bli kjent med github og ulike funksjoner i den.
 
-Reflektering over metodene
+Reflektering over metodene:
 
-P – denne metoden var forvirrende fordi p element har begrenset muligheter, det brukes til tekst ikke visuelle bilder. Alle med denne metoden lagde et simpelt flagg med bare tre farger, i seg selv var det enkelt.
+P – Denne metoden var forvirrende fordi p element har begrenset muligheter, det brukes til tekst ikke visuelle bilder. Alle med denne metoden lagde et simpelt flagg med bare tre farger, i seg selv var det enkelt.
 
 CSS – Denne metoden var noe lettere å bruke og mer oversiktlig. Også i denne modellen skulle p-element benyttes, noe som gjør denne metoden begrenset å bruke.
 
-CANVAS – Denne metoden var den letteste å bruke av de metodene over. Fordelen med denne metoden er muligheten for å lage flere detaljer. Samtidig er det flere alternativer på hvilke metoder man vil gå frem med og man er ikke begrenset som de andre metodene. Eneste negative var å komme i gang i å forstå denne metoden.
+CANVAS – Denne metoden var den letteste å bruke av de metodene over. Fordelen med denne metoden er muligheten for å lage flere detaljer. Samtidig er det flere alternativer på hvilke metoder man vil gå frem med og man er ikke begrenset som de andre metodene. Eneste negative var å komme i gang i å forstå hvordan man skulle bruke denne metode, med tanke på hvor allsidig den er.
