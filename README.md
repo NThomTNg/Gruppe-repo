@@ -27,6 +27,7 @@ Omar – lage individuelt minst et flagg med 1 fordelt metode (CANVAS)
 Alle har lagt inn sitt arbeid i mappen sin på repository
 
 5:
+  
 a) Vi har gjort noen av oppgavene om til issues. Vi har brukt bord og tabell til oversikt over prosjektet. Vi valgte å bruke sentralisert metode til kloning. Vi oppfattet at vi skulle bruke GitHub projects, så det er det vi har brukt siden begynnelsen. 
 
 b) Relevant hovedoppgave har vært at alle individuelt lager et flagg med fordelt metode, og individuelt laster det opp til GitHub.
