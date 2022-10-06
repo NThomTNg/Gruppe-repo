@@ -16,8 +16,6 @@ Kristin – lage individuelt minst et flagg med 1 fordelt metode (P-ELEMENT I <S
 
 Nora – lage individuelt minst et flagg med 1 fordelt metode (CSS STYLE)
 
-Håkon – lage individuelt minst et flagg med 1 fordelt metode (CSS STYLE)
-
 Thomas – lage individuelt minst et flagg med 1 fordelt metode (CANVAS) + GITHUB ANSVAR
 
 Samet – lage individuelt minst et flagg med 1 fordelt metode (CANVAS)
