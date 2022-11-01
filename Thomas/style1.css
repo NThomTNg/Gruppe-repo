@@ -30,8 +30,36 @@ margin: 10px 0 40px;
 font-size: 14px;
 color: aliceblue;
 }
-
-/*Medlemmer*/
+      /*Style del for navigation bar*/
+      body { 
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      
+      .topnav {
+        overflow: hidden;
+        background-color: lightblue;
+      }
+      
+      .topnav a {
+        float: left;
+        color: #f2f2f2;
+        text-align:center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+      }
+      
+      .topnav a:hover {
+        background-color: #ddd;
+        color: white;
+      }
+      
+      .topnav a.active {
+        background-color: #C6DAD6;
+        color: white;
+      }
+/*Medlemmer kort*/
 
 .Medlemmer{
     width: 100%;
@@ -53,7 +81,7 @@ color: aliceblue;
 }
 .Medlemmer-col{
     width: 250px;
-    height: 300px;
+    height: 280px;
     background: rgb(172, 219, 228);
     border-radius: 10px;
     margin: 15px;
