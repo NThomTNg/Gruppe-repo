@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="no-NB">
+<head>
+    <meta charset="UTF-8">
+    <title>How We Roll</title>
+
+    <style>
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            }
+        li {
+            display: inline; /*lage horizonal navigation bar*/
+            float: left;
+            }
+        a {
+            display: block;
+            padding: 8px;
+            background-color: #46c1eb; /*sette bakgrunnsfarge til lyseblå */
+            color: white; /* hvit tekst */
+            text-decoration: none; /* ta vekk understrek fra linkene */
+            }
+         li a:hover {
+            background-color: lightgrey; /* on hover, sette bakgrunnsfarge til lysegrå */
+            }
+    </style>
+</head>
+<body>
+
+<h1>How We Roll</h1>
+
+<ul>
+    <li><a href="default.asp">Home</a></li>
+    <li><a href="hwrTest.html">Input</a></li>
+    <li><a href="hwrOutputTest.html">Output</a></li>
+</ul>
+<br><br><br>
+
+<form>
+    <label>Navn: </label> <input id="navn" type="text" required>
+    <br>
+    
+    <label for="earlyNight">Early bird or</label>
+    <input type="range" id="earlyNight" name="earlyNight" min="0" max="100">
+    <label for="earlyNight">Night owl</label>
+
+    <br>
+    <label for="togetherAlone">Work on it together or</label>
+    <input type="range" id="togetherAlone" name="togetherAlone" min="0" max="100">
+    <label for="togetherAlone">Go off alone and think</label>
+
+    <br>
+    <label for="backstoryCut">Tell me the backstory</label>
+    <input type="range" id="backstoryCut" name="backstoryCut" min="0" max="100">
+    <label for="backstoryCut">Cut to the chase</label>
+
+    <br>
+    <label for="talkMoveOn">Need to talk it out</label>
+    <input type="range" id="talkMoveOn" name="talkMoveOn" min="0" max="100">
+    <label for="talkMoveOn">Need to move on</label>
+
+    <br>
+    <label for="verbalMental">Verbal processor</label>
+    <input type="range" id="verbalMental" name="verbalMental" min="0" max="100">
+    <label for="verbalMental">Mental processor</label>
+
+    <br>
+    <label for="scheduleInterrupt">Schedule a time to chat</label>
+    <input type="range" id="scheduleInterrupt" name="scheduleInterrupt" min="0" max="100">
+    <label for="scheduleInterrupt">Interrupt me when you need me</label>
+
+    <br>
+    <label for="videoText">Video chat</label>
+    <input type="range" id="videoText" name="videoText" min="0" max="100">
+    <label for="videoText">Slack/text</label>
+
+    <br>
+    <label for="setHours">9-17 Hours</label>
+    <input type="range" id="setHours" name="setHours" min="0" max="100">
+    <label for="setHours">No set schedule</label>
+
+    <br>
+    <input type="submit" value="Submit">
+
+</form>
+<script>
+
+</script>
+
+</body>
+</html>
