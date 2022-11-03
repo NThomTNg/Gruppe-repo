@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>How we roll</title>
+    <style></style>
+    <link rel="stylesheet" href="style1.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+            href="https://fonts.googleapis.com/css2?family=Abyssinica+SIL&display=swap"
+            rel="stylesheet"
+    />
+</head>
+<body>
+<!--Oversiden-->
+
+<section class="header"></section>
+<div class="text-box">
+    <h1>Gruppe 10A How We Roll</h1>
+    <p>Dette er vår webside om vår gruppe og hver medlemm i gruppen.<br>Her kan du også fylle inn din egen informasjon om hvordan du jobber i gruppe med å gå på "Skjema" .</p>
+</div>
+
+<!--Navigation bar-->
+
+<div class="topnav">
+    <a class="active" href="home.html">Home</a>
+    <a href="index.html">Skjema</a>
+    <a href="web-rapport.html">Rapport</a>
+</div>
+
+<div style="padding-left:16px">
+</div>
+
+<!---Gruppemedlemm kort-->
+
+<section class="Medlemmer">
+    <h1 style="color:aliceblue;">Gruppemedlemmer av 10A</h1>
+    <div class="row">
+        <div class="Medlemmer-col">
+            <h3>Thomas</h3>
+            <p>Hei jeg heter Thomas!</p>
+            <img src=""alt="Thomas"/>
+        </div>
+        <div class="Medlemmer-col">
+            <h3>Omar</h3>
+            <p>Hei jeg heter Omar!</p>
+            <img src="img/icon.jpg" alt="Omar">
+        </div>
+        <div class="Medlemmer-col">
+            <h3>Nora</h3>
+            <p>Hei jeg heter Nora!</p>
+            <img src="img/icon.jpg" alt="Nora">
+        </div>
+        <div class="Medlemmer-col">
+            <h3>Sander</h3>
+            <p>Hei jeg heter Sander!</p>
+            <img src="img/icon.jpg" alt="Sander">
+        </div>
+        <div class="Medlemmer-col">
+            <div>
+            <img src="img/samet.jpg" alt="Samet">
+            <h3 style="margin-top: 10px">Samet</h3>
+            </div>
+           <div>
+            <p style ="">Hei! Jeg heter&nbsp;
+                <output id = "isThisSamet"></output>
+                Jeg er en&nbsp;<<<output id = "isSametEarlyBird" ></output>>>
+                &nbsp;prosent nightfuggel. Jeg liker&nbsp;<<<output id = "workTogetherSamet"></output>>>
+                &nbsp;prosent å jobbe med andre. 9-17 arbeidsdag passer &nbsp;
+                <<<output id = "9-17Samet"></output>>>&nbsp; prosent til meg. Hva med deg?
+            </p>
+               </div>
+
+        </div>
+
+        <div class="Medlemmer-col">
+            <h3>Anastasia</h3>
+            <p>Hei jeg heter Anastasia!</p>
+            <img src="img/icon.jpg" alt="Anastasia">
+        </div>
+        <div class="Medlemmer-col">
+            <h3>Kristin</h3>
+            <p>Hei jeg heter Kristin!</p>
+            <img src="img/icon.jpg" alt="Kristin">
+        </div>
+    </div>
+    </div>
+</section>
+<script>
+    fetch('https://bacit.info/hwr/20221102122600-62058d76ece872b8791d3ff86cbd5fd4.json')
+        .then(function (resp){
+            return resp.json();
+        })
+        .then (function (element){
+
+
+            let arraylist = Object.entries(element);
+            console.log(arraylist);
+            setHomePage(arraylist);
+        });
+    function setHomePage(array){
+                if (array[0][1]==="Samet"){
+                    let sametName = document.getElementById("isThisSamet");
+                    sametName.innerText = "Samet.";
+                    sametName.style.cssText = "font-size : 18px; color:#000000; font-family:arial;  font-style: italic;"
+                   let sametEarly = document.getElementById("isSametEarlyBird");
+                    sametEarly.style.cssText = "font-size : 18px; color:#000000; font-family:arial;  font-style: italic;"
+                    sametEarly.innerText = array[2][1];
+                    let sametWork = document.getElementById("workTogetherSamet");
+                    sametWork.innerText = array[3][1];
+                    sametWork.style.cssText = "font-size : 18px; color:#000000; font-family:arial;  font-style: italic;"
+                    let samet917 = document.getElementById("9-17Samet");
+                    samet917.innerText= array[8][1];
+                    samet917.style.cssText = "font-size : 18px; color:#000000; font-family:arial;  font-style: italic;"
+                }
+
+    }
+</script>
+</body>
+</html>

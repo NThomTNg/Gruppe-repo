@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flag Page</title>
+    <style>
+        body {
+            background: turquoise;
+            font-family: "Lava Kannada";
+            font-size: 20px;
+        }
+        .place {
+            display: flex;
+            justify-content: center;
+        }
+        .container {
+            display: flex;
+            margin-top: 30px;
+            margin-left: 30px;
+        }
+        .box{
+            width: 350px;
+            height: 220px;
+            border: 10px red;
+            text-align: start;
+            margin-left: 10px;
+            padding: 5px;
+            margin-top: 10px;
+            background: turquoise;
+            align-items: center;
+            align-content: center;
+        }
+        .header {
+            text-align: center;
+        }
+        #pItem {
+            text-align: start;
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class = "header">
+    <h1>Flag Oppgave IS 114</h1>
+    <p style id = "pItem" > Tyrkiske flagget er laget i canvas</p>
+</div>
+    <div class = "place">
+    <div class = "container">
+        <div class = "box">
+            <canvas id = "turkiye"></canvas>
+            <h3>Tyrkia</h3>
+        </div>
+    </div>
+    </div>
+</body>
+<script>
+    let canvasTr = document.querySelector("#turkiye");
+    let c1 = canvasTr.getContext("2d");
+    c1.fillStyle = "#E30A17";
+    c1.fillRect(0,0,225,150);
+    c1.beginPath();
+    c1.arc(75, 75, 37.5,0,2*Math.PI,false);
+    c1.strokeStyle = "#E30A17";
+    c1.fillStyle = "#FFFFFF";
+    c1.fill();
+    c1.stroke();
+    c1.beginPath();
+    c1.arc(83.5, 75, 30,0,2*Math.PI,false);
+    c1.strokeStyle = "#E30A17";
+    c1.fillStyle = "#E30A17";
+    c1.fill();
+    c1.stroke();
+    let img1 = new Image();
+    img1.src = "star.png";
+    img1.onload = () => {
+        c1.drawImage(img1, 102.5,53,37.5,37.5);
+    }
+</script>
+</html>
+
