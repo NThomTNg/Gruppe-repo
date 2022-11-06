@@ -5,120 +5,140 @@
     <title>Title</title>
     <style>
         .canvas{
-            background-color: rgb(69, 196, 94);
+            background-color: rgb(255, 255, 255);
         }
 
     </style>
 </head>
 <body>
-  <canvas id = "report" class = "canvas" width="700px" height="750px"></canvas>// du kan jobbe med css.
+  <canvas id = "report" class = "canvas" width="1000px" height="1000px"></canvas> <!-- det er laget et område ved bruk av canvas api for å tegne -->
 <script>
-  var canvas = document.getElementById("report");
+  var canvas = document.getElementById("report"); // her ble det tatt canvas element med report id for å bruke i  javascript
   var context = canvas.getContext("2d");
 
   context.font = '14px serif';
   context.fillStyle = "white";
   context.fillStyle = 'black';
-  context.fillText("Early bird", 30, 50);
-  context.fillText('Work on together', 30, 100);
-  context.fillText('Tell me the back story', 30, 150);
-  context.fillText('Verbal processor', 30, 200);
+  context.fillText("Morgenfugl", 30, 50); // i denne koden til neste komment linje lager en struktur som inkluderer hovedlinjer og tekster for å vise output
+  context.fillText("Nattfugle", 570, 50);
+  context.fillText('Jobbe sammen', 30, 100);
+  context.fillText("Jobbe alene", 570, 100);
+  context.fillText('Fasttid', 30, 150);
+  context.fillText('Fleksibelt', 570, 150);
+  context.fillText('Online', 30, 200);
+  context.fillText('Møte irl', 570, 200);
   context.fillText('Schedule a time to chat', 30, 250);
-  context.fillText('Video chat', 30, 300);
-  context.fillText('9/17 hours', 30, 350);
+  context.fillText('Interrupt when u need me', 570, 250);
+  context.fillText('Verbal processor', 30, 300);
+  context.fillText('Mental processor', 570, 300);
+  context.fillText('Need to talk to it', 30, 350);
+  context.fillText('Need to move on', 570, 350);
 
 
+  //context.setLineDash([4,2])
+  context.moveTo(165,50); // flytter path til et spesifik punktet i canvas ute å tegne noe
+  context.lineTo(540,50); // tegner en linje
 
-
-  context.beginPath();
-  context.moveTo(140,50);
-  context.lineTo(540,50);
-
-  context.moveTo(140,100);
+  context.moveTo(165,100);
   context.lineTo(540,100);
 
-  context.moveTo(140,150);
+  context.moveTo(165,150);
   context.lineTo(540,150);
 
-  context.moveTo(140,200);
+  context.moveTo(165,200);
   context.lineTo(540,200);
 
-  context.moveTo(140,250);
+  context.moveTo(165,250);
   context.lineTo(540,250);
 
-  context.moveTo(140,300);
+  context.moveTo(165,300);
   context.lineTo(540,300);
 
-  context.moveTo(140,350);
+  context.moveTo(165,350);
   context.lineTo(540,350);
   context.stroke();
 
-  fetch('https://bacit.info/hwr/20221029085840-8392a7adfb2bba55e7c7f1311b1fe60a.json')
-          .then(function (resp){
-            return resp.json();
+
+fetch('https://bacit.info/hwr/20221106152615-70cb20134f53eefe1a180cb2b3b89862.json') // her har det blitt brukt fetch api for å hente data fra bacit.info
+          .then(function (response){
+            return response.json(); // data kommer som en json format fra server
+
           })
           .then (function (element){
-              console.log(element)
 
-              let resArray = Object.entries(element);
-              findMyPlace(resArray, 0);
+              let respArray = Object.entries(element); // her blir json formaten endret til en arraylist slik at de blir lettere å gå gjennom listen
+              console.log(respArray);
+              drawCircle(respArray, 0);
 
           });
   fetch('https://bacit.info/hwr/20221029094507-3f90c0378796e229987718aafacc1620.json')
-      .then(function (resp){
-          return resp.json();
+      .then(function (response){
+          return response.json();
       })
       .then (function (element){
-          console.log(element)
-          let resArray = Object.entries(element);
-          findMyPlace(resArray,25);
+
+          let respArray = Object.entries(element);
+          drawCircle(respArray,100);
 
       });
   fetch('https://bacit.info/hwr/20221029094641-5eb8238aa865740dce1e75a016a988a1.json')
-      .then(function (resp){
-          return resp.json();
+      .then(function (response){
+          return response.json();
       })
       .then (function (element){
-          console.log(element)
-          let resArray = Object.entries(element);
-          findMyPlace(resArray,50);
+          let respArray = Object.entries(element);
+          drawCircle(respArray,50);
 
       });
   fetch('https://bacit.info/hwr/20221029100231-44fb7831003ce01eb0dbe2e58b3bdbfd.json')
-      .then(function (resp){
-          return resp.json();
+      .then(function (response){
+          return response.json();
       })
       .then (function (element){
           console.log(element)
-          let resArray = Object.entries(element);
-          findMyPlace(resArray,75);
+          let respArray = Object.entries(element);
+          drawCircle(respArray,75);
 
       });
   fetch('https://bacit.info/hwr/20221029100411-abc1dcfe11b69fa5fb87fcef768cf524.json')
-      .then(function (resp){
-          return resp.json();
+      .then(function (response){
+          return response.json();
       })
       .then (function (element){
           console.log(element)
-          let resArray = Object.entries(element);
-          findMyPlace(resArray,100);
+          let respArray = Object.entries(element);
+          drawCircle(respArray,25);
 
       });
 
-    function  findMyPlace(array, num){
-        var x = 140 ;
+    function  drawCircle(array, num){ /* denne funksjonen tegner fargerike sirkler på canvas etter hentet informasjon fra server.
+         funksjonen tar to parameter, en array list og et nummer. Array list inkluderer data som har endret fra json format. Nummer
+         blir brukt for å  */
+        var x = 165 ; // denne  variabelen er startpunktet til  linjer
         var y = 50;
         var r = 5;
-        const randColor = () =>  {
+        const randColor = () =>  { // denne metoden produserer random color *tatt fra stackoverflow
             return "#" + Math.floor(Math.random()*16777215).toString(16).padStart(6, '0').toUpperCase();
         }
         let colorX = randColor();
+
+        context.beginPath() // denne metoden starter en ny path slik at det blir mulig å tegne ulike type linjer eller former
+        context.arc(750, y + num, r, 0, Math.PI*2, false); //arc() method lager en sirkel etter sine parameter
+        context.fillStyle = colorX; // denne property setter eller returnerer en farge
+        context.fill(); // fill() methoden fyller gjeldende tegning
+        context.lineWidth = 2; // setter linje bredde
+        context.strokeStyle = colorX; // denne property gir en spesifik farge eller mønster for strekene rundt former
+        context.stroke(); // tegner strokene
+        context.closePath() // metoden til Canvas 2D API forsøker å legge til en rett linje fra gjeldende punkt til starten av gjeldende underbane.
+
         context.fillStyle = colorX;
-        context.fillText(array[0][1], 600,25 + num);
-        context.fillText(array[1][1], 650,25 + num);
+        context.fillText(array[0][1], 770,y + num);
+        context.fillText(array[1][1], 820,y+ num);
+
         for (i = 2; i <= array.length-3; i++){
             if (array[i][0] === "earlyBird"){
-                let newX = ((400*parseInt(array[i][1]))/100 + 140);
+                let newX = ((400*parseInt(array[i][1]))/100 + x);
+                console.log(array[i][1]);
                 context.beginPath()
                 context.arc(newX, y, r, 0, Math.PI*2, false);
                 context.fillStyle = colorX;
@@ -128,7 +148,8 @@
                 context.stroke();
                 context.closePath()
             }  else if (array[i][0] === "workOnTogether"){
-                let newX = ((400*parseInt(array[i][1]))/100 + 140);
+                let newX = ((400*parseInt(array[i][1]))/100 + x);
+                console.log(array[i][1]);
                 context.beginPath()
                 context.arc(newX, y +50,r, 0, Math.PI*2, false);
                 context.fillStyle =colorX;
@@ -138,7 +159,8 @@
                 context.stroke();
                 context.closePath()
             } else if (array[i][0] === "tellMeStory"){
-                let newX = ((400*parseInt(array[i][1]))/100 + 140);
+                let newX = ((400*parseInt(array[i][1]))/100 + x);
+                console.log(array[i][1]);
                 context.beginPath()
                 context.arc(newX, y +100,r, 0, Math.PI*2, false);
                 context.fillStyle =colorX;
@@ -148,7 +170,8 @@
                 context.stroke();
                 context.closePath()
             } else if (array[i][0] === "processor") {
-                let newX = ((400*parseInt(array[i][1]))/100 + 140);
+                let newX = ((400*parseInt(array[i][1]))/100 + x);
+                console.log(array[i][1]);
                 context.beginPath()
                 context.arc(newX, y + 150, r, 0, Math.PI * 2, false);
                 context.fillStyle = colorX;
@@ -158,7 +181,8 @@
                 context.stroke();
                 context.closePath()
             } else if (array[i][0] === "schedule") {
-                let newX = ((400*parseInt(array[i][1]))/100 + 140);
+                let newX = ((400*parseInt(array[i][1]))/100 + x);
+                console.log(array[i][1]);
                 context.beginPath()
                 context.arc(newX, y + 200, r, 0, Math.PI * 2, false);
                 context.fillStyle = colorX;
@@ -168,7 +192,8 @@
                 context.stroke();
                 context.closePath()
             } else if (array[i][0] === "videoChat") {
-                let newX = ((400*parseInt(array[i][1]))/100 + 140);
+                let newX = ((400*parseInt(array[i][1]))/100 + x);
+                console.log(array[i][1]);
                 context.beginPath()
                 context.arc(newX, y + 250, r, 0, Math.PI * 2, false);
                 context.fillStyle = colorX;
@@ -178,12 +203,13 @@
                 context.stroke();
                 context.closePath()
             } else if (array[i][0] === "noSetSchedule") {
-                let newX = ((400*parseInt(array[i][1]))/100 + 140);
+                let newX = ((400*parseInt(array[i][1]))/100 + x);
+                console.log(array[i][1]);
                 context.beginPath()
                 context.arc(newX, y + 300, r, 0, Math.PI * 2, false);
                 context.fillStyle = colorX;
                 context.fill();
-                context.lineWidth = 2;
+                context.lineWidth = 3;
                 context.strokeStyle = colorX;
                 context.stroke();
                 context.closePath()
