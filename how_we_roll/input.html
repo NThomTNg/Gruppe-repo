@@ -1,8 +1,7 @@
 <html lang="en">
 <head>
   <title>HowWeRoll - Innput</title>
-  <link rel="stylesheet" href="CSS.css" />
-  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" />
   <meta charset="UTF-8" />
 
   <style>
@@ -41,65 +40,6 @@
     body{
       margin: 0;
     }
-    /*--------------------------   HOVEDDLINJE -------------------------------------------------------------*/
-    .Topplinje{
-      grid-column: 1/3;
-      grid-row: 1/2;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
-      background-color: #154754;
-      text-align: center;
-      font-size: 19px;
-    }
-
-    /*--------------------------   Hjem -------------------------------------------------------------*/
-
-
-    .ContainerHjem{
-      display: grid;
-      grid-template-columns: 50% 50%;
-      grid-template-rows: 47px 60px 965px 20px;
-      background-color: white;
-      height: 100px;
-      grid-gap: 0;
-      right: 200px;
-    }
-
-    .Under{
-      grid-column: 1/3;
-      grid-row: 2/3;
-      background-color: #154754;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .hov1{
-      grid-column: 1/3;
-      grid-row: 3/4;
-      background-color: black;
-      background-repeat: no-repeat;
-      background-position: center;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: normal;
-      background-image: url("uiaBygg.jpg");
-    }
-
-    .copy{
-      grid-column: 1/3;
-      grid-row: 4/5;
-      background-color: white;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: normal;
-      background-color: #554C51;
-    }
-
     /*--------------------------   Innput -------------------------------------------------------------*/
     .ContainerInnput{
       display: grid;
@@ -109,16 +49,6 @@
       height: 100px;
       grid-gap: 0;
       right: 200px;
-    }
-
-    .Under{
-      grid-column: 1/3;
-      grid-row: 2/3;
-      background-color: #154754;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
     }
 
     .hovInnput{
@@ -147,14 +77,13 @@
   </style>
 </head>
 <body>
-<div class="ContainerInnput">
-  <div class="topnav">
-    <a class="active" href="home.html">Home</a>
-    <a href="input.html">Input</a>
-    <a href="web-rapport.html">Output</a>
-    <h2>How We Roll</h2>
-  </div>
-
+  <div class="ContainerInnput">
+    <div class="topnav">
+      <a class="active" href="#home">Home</a>
+      <a href="#news">Input</a>
+      <a href="#contact">Output</a>
+      <h2>How We Roll</h2>
+    </div>
   <div class="hovInnput">
     <br />
 
@@ -171,10 +100,10 @@
       />
       <br />
       <p>
-        <label for="MoNa">Morgenfugl</label>
-        <input type="range" id="MoNa" name="MoNa" min="0" max="10" />
-        <label for="MoNa">Nattugle</label>
-      </p>
+      <label for="MoNa">Morgenfugl</label>
+      <input type="range" id="MoNa" name="MoNa" min="0" max="10" />
+      <label for="MoNa">Nattugle</label>
+    </p>
       <br />
       <p>
         <label for="SaAl">Jobbe sammen</label>
@@ -183,21 +112,21 @@
       </p>
       <br />
       <p>
-        <label for="FaFl">Fast tid</label>
+        <label for="FaFl">Jobbe fast tid</label>
         <input type="range" id="FaFl" name="FaFl" min="0" max="10" />
-        <label for="FaFl">Fleksibelt</label>
+        <label for="FaFl">Jobbe fleksibelt tid</label>
       </p>
       <br />
       <p>
-        <label for="OnMø">Online</label>
-        <input type="range" id="OnMø" name="OnMø" min="0" max="10" />
-        <label for="OnMø">Møte irl</label>
+        <label for="OnSa">Jobbe online</label>
+        <input type="range" id="OnSa" name="OnSa" min="0" max="10" />
+        <label for="OnSa">Jobbe sammen (møtes)</label>
       </p>
       <br />
       <p>
-        <label for="ChBa">Tell me the backstory</label>
-        <input type="range" id="ChBa" name="ChBa" min="0" max="10" />
-        <label for="ChBa">Cut to the chase</label>
+        <label for="BaCh">Tell me the backstory</label>
+        <input type="range" id="BaCh" name="BaCh" min="0" max="10" />
+        <label for="BaCh">Cut to the chase</label>
       </p>
       <br />
       <p>
@@ -216,6 +145,18 @@
         <label for="ScIn">Schedule a time to chat</label>
         <input type="range" id="ScIn" name="ScIn" min="0" max="10" />
         <label for="ScIn">Interrupt me when you need me</label>
+      </p>
+      <br />
+      <p>
+        <label for="AlEn">Alle bestemmer i gruppen</label>
+        <input type="range" id="AlEn" name="AlEn" min="0" max="10" />
+        <label for="AlEn">En gir ut oppgaver til resten.</label>
+      </p>
+      <br />
+      <p>
+        <label for="AcDo">Activities for team building</label>
+        <input type="range" id="AcDo" name="AcDo" min="0" max="10" />
+        <label for="AcDo">Don't contact me outside of business hours.</label>
       </p>
       <br />
       <button type="submit">Send inn</button>
