@@ -5,25 +5,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>How we roll</title>
-    <style></style>
-    <link rel="stylesheet" href="style1.css" />
+    <!--Font som blir brukt i hovedsiden-->
+    <link rel="stylesheet" href="style1.css" /> 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-            href="https://fonts.googleapis.com/css2?family=Abyssinica+SIL&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Abyssinica+SIL&display=swap" 
             rel="stylesheet"
-    />
+    /> 
 </head>
 <body>
 <!--Oversiden-->
 
 <section class="header"></section>
+<!--Header på oversiden av nettsiden med overskrift og generell informasjon-->
 <div class="text-box">
     <h1>Gruppe 10A How We Roll</h1>
     <p>Dette er vår webside om vår gruppe og hver medlemm i gruppen.<br>Her kan du også fylle inn din egen informasjon om hvordan du jobber i gruppe med å gå på "Skjema" .</p>
 </div>
 
-<!--Navigation bar-->
+<!--Topnav er en navigationbar på toppen av nettsiden for å navigere seg gjennom nettsiden-->
 
 <div class="topnav">
     <a class="active" href="index.html">Home</a>
@@ -34,7 +35,7 @@
 <div style="padding-left:16px">
 </div>
 
-<!---Gruppemedlemm kort-->
+<!---Egen seksjon separat for oversiden. Seksjonen er for gruppemedlemm visitkort-->
 
 <section class="Medlemmer">
     <h1 style="color:aliceblue;">Gruppemedlemmer av 10A</h1>
@@ -45,13 +46,13 @@
             <img src="img/23103721.jpg"alt="Thomas"/>
             <h3>Thomas</h3>
             </div>
-            <p style ="">Hei! Jeg heter&nbsp;
+            <p style ="">Hei! Jeg heter&nbsp; <!--Beskrivelse av medlemmer i gruppe 10A/informasjon som står i visitkortene-->
                 <output id = "isThisThomas"></output>
-                Jeg er en&nbsp;(<output id = "isThomasEarlyBird" ></output>)
+                Jeg er en&nbsp;(<output id = "isThomasEarlyBird" ></output>) <!--Det som står er basert på informasjonen fra bacit serveren-->
                 &nbsp;prosent nightfuggel. Jeg liker&nbsp;(<output id = "workTogetherThomas"></output>)
                 &nbsp;prosent å jobbe med andre. Å jobbe fast tid passer
                 (<output id = "fastTidThomas"></output>)&nbsp; prosent til meg. Hva med deg?
-            </p>
+            </p><!--viser 3 spørsmåler-->
         </div>
         <div class="Medlemmer-col">
             <div>
@@ -139,8 +140,8 @@
         </div>
 </div>
 </section>
-<script>
-    fetch('https://bacit.info/hwr/20221107164230-6f0452b7549edddbdbbc5c073125b2da.json') // samet
+<script> //Script for beskrivelse av medlemmer i gruppe 10A/informasjon som står i visitkortene
+    fetch('https://bacit.info/hwr/20221107164230-6f0452b7549edddbdbbc5c073125b2da.json') //Henter informasjon fra bacit server. Skjema ble fylt ut av medlemmer slik at vi kunne vise det frem i visitkortene.
         .then(function (resp){
             return resp.json();
         })
@@ -149,10 +150,10 @@
 
             let array = Object.entries(element);
 
-            let sametName = document.getElementById("isThisSamet");
+            let sametName = document.getElementById("isThisSamet"); //Sjekker om det en spesefik medlemms informasjon
             sametName.innerText = array[0][1] + ".";
             sametName.style.cssText = "font-size : 18px; color:#000000; font-family:arial;  font-style: italic;"
-            let sametEarly = document.getElementById("isSametEarlyBird");
+            let sametEarly = document.getElementById("isSametEarlyBird"); //Sjekker hvilket nivå medlemmem ligger basert på hva de selv svarte
             sametEarly.style.cssText = "font-size : 18px; color:#000000; font-family:arial;  font-style: italic;"
             sametEarly.innerText = array[2][1];
             let sametWork = document.getElementById("workTogetherSamet");
@@ -161,8 +162,8 @@
             let sametfast = document.getElementById("fastTidSamet");
             sametfast.innerText= array[4][1];
             sametfast.style.cssText = "font-size : 18px; color:#000000; font-family:arial;  font-style: italic;"
-        });
-    fetch('https://bacit.info/hwr/20221107123800-fd34db80187a62043c7aef71e6831d52.json') // omar
+        }); //3 spørsmålene som blir vist på visitkortene er det som blir sjekket
+    fetch('https://bacit.info/hwr/20221107123800-fd34db80187a62043c7aef71e6831d52.json') 
         .then(function (resp){
             return resp.json();
         })
@@ -183,7 +184,7 @@
             samet917.innerText= array[4][1];
             samet917.style.cssText = "font-size : 18px; color:#000000; font-family:arial;  font-style: italic;"
         });
-    fetch('https://bacit.info/hwr/20221107123754-96d86078d416226a2fd5776da1827910.json') // sander
+    fetch('https://bacit.info/hwr/20221107123754-96d86078d416226a2fd5776da1827910.json') 
         .then(function (resp){
             return resp.json();
         })
@@ -204,7 +205,7 @@
             samet917.innerText= array[4][1];
             samet917.style.cssText = "font-size : 18px; color:#000000; font-family:arial;  font-style: italic;"
         });
-    fetch('https://bacit.info/hwr/20221107123812-55523f5efd4c81f0a38435cb4a0a2495.json') // nora
+    fetch('https://bacit.info/hwr/20221107123812-55523f5efd4c81f0a38435cb4a0a2495.json') 
         .then(function (resp){
             return resp.json();
         })
@@ -225,7 +226,7 @@
             samet917.innerText= array[4][1];
             samet917.style.cssText = "font-size : 18px; color:#000000; font-family:arial;  font-style: italic;"
         });
-    fetch('https://bacit.info/hwr/20221107123751-d35c80da37a68b83dcbea6e79464eb76.json') // thomas
+    fetch('https://bacit.info/hwr/20221107123751-d35c80da37a68b83dcbea6e79464eb76.json') 
         .then(function (resp){
             return resp.json();
         })
@@ -246,7 +247,7 @@
             samet917.innerText= array[4][1];
             samet917.style.cssText = "font-size : 18px; color:#000000; font-family:arial;  font-style: italic;"
         });
-    fetch('https://bacit.info/hwr/20221107123756-adc943cddc7b93606a60c8a65df59bb5.json') // kristin
+    fetch('https://bacit.info/hwr/20221107123756-adc943cddc7b93606a60c8a65df59bb5.json') 
         .then(function (resp){
             return resp.json();
         })
@@ -267,7 +268,7 @@
             samet917.innerText= array[4][1];
             samet917.style.cssText = "font-size : 18px; color:#000000; font-family:arial;  font-style: italic;"
         });
-    fetch('https://bacit.info/hwr/20221107123800-01a26e4f44ab50ccb9e96e494da6a5ed.json') // anastasia
+    fetch('https://bacit.info/hwr/20221107123800-01a26e4f44ab50ccb9e96e494da6a5ed.json') 
         .then(function (resp){
             return resp.json();
         })
@@ -292,3 +293,4 @@
 </script>
 </body>
 </html>
+
