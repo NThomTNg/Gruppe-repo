@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #report{
+            background-color: #ffffff;
+        }
+        .topnav {
+            overflow: hidden;
+            background-color: lightblue;
+        }
+        h2 {
+            text-align: center;
+        }
+
+        .topnav a {
+            float: left;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .topnav a:hover {
+            background-color: #ddd;
+            color: white;
+        }
+
+        .topnav a.active {
+            background-color: #c6dad6;
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+<div class="topnav">
+    <a class="active" href="index.html">Home</a>
+    <a href="input.html">Input</a>
+    <a href="web-rapport.html">Output</a>
+    <h2>How We Roll</h2>
+</div>
+<canvas id = "report" class = "canvas" width="1000px" height="850px"></canvas> <!-- det er laget et område ved bruk av canvas api for å tegne -->
+<script>
+    var canvas = document.getElementById("report"); // her ble det tatt canvas element med report id for å bruke i  javascript
+    var context = canvas.getContext("2d");
+
+    context.font = '14px serif';
+    context.fillStyle = "white";
+    context.fillStyle = 'black';
+    context.fillText("Morgenfugl", 0, 50); // denne koden til fetch api lager en struktur som inkluderer hovedlinjer og tekster for å vise output
+    context.fillText("Nattfugle", 580, 50);
+    context.fillText('Jobbe sammen', 0, 100);
+    context.fillText("Jobbe alene", 580, 100);
+    context.fillText('Jobbe fasttid', 0, 150);
+    context.fillText('Jobbe fleksibelt', 580, 150);
+    context.fillText('Jobbe online', 0, 200);
+    context.fillText('Møtes fysisk', 580, 200);
+    context.fillText('Fortell meg bakhistorien', 0, 250);
+    context.fillText('Kom til poenget', 580, 250);
+    context.fillText('Avtal tid for å snakke', 0, 300);
+    context.fillText('Ring meg når du trenger', 580, 300);
+    context.fillText('Verbal processor', 0, 400);
+    context.fillText('Mental processor', 580, 400);
+    context.fillText('Trenger å snakke ut', 0, 350);
+    context.fillText('Trenger å gå videre', 580, 350);
+    context.fillText('Flertallet bestemmer', 0, 450);
+    context.fillText('En gir ut oppgaver til resten', 580, 450);
+    context.fillText('Activiteter for teambuilding', 0, 500);
+    context.fillText('Ikke kontakt meg utenfor arbeidstid', 580, 500);
+
+    //context.setLineDash([4,2])
+    context.moveTo(165,50); // flytter path til et spesifik punktet i canvas ute å tegne noe
+    context.lineTo(565,50); // tegner en linje
+
+    context.moveTo(165,100);
+    context.lineTo(565,100);
+
+    context.moveTo(165,150);
+    context.lineTo(565,150);
+
+    context.moveTo(165,200);
+    context.lineTo(565,200);
+
+    context.moveTo(165,250);
+    context.lineTo(565,250);
+
+    context.moveTo(165,300);
+    context.lineTo(565,300);
+
+    context.moveTo(165,350);
+    context.lineTo(565,350);
+
+    context.moveTo(165,400);
+    context.lineTo(565,400);
+
+    context.moveTo(165,450);
+    context.lineTo(565,450);
+
+    context.moveTo(165,500);
+    context.lineTo(565,500);
+    context.stroke();
+
+
+    fetch('https://bacit.info/hwr/20221107123800-01a26e4f44ab50ccb9e96e494da6a5ed.json') // her har det blitt brukt fetch api for å hente data fra bacit.info
+        .then(function (response){//anastasia
+            return response.json(); // data kommer som en json format fra server
+
+        })
+        .then (function (element){
+
+            let respArray = Object.entries(element); // her blir json formaten endret til en arraylist slik at de blir lettere å gå gjennom listen
+            console.log(respArray);
+            drawCircle(respArray, 0);
+
+        });
+    fetch('https://bacit.info/hwr/20221107123756-adc943cddc7b93606a60c8a65df59bb5.json')//Kristin
+        .then(function (response){
+            return response.json();
+        })
+        .then (function (element){
+
+            let respArray = Object.entries(element);
+            drawCircle(respArray,25);
+
+        });
+    fetch('https://bacit.info/hwr/20221107123751-d35c80da37a68b83dcbea6e79464eb76.json')//thomas
+        .then(function (response){
+            return response.json();
+        })
+        .then (function (element){
+            let respArray = Object.entries(element);
+            drawCircle(respArray,50);
+
+        });
+    fetch('https://bacit.info/hwr/20221107123812-55523f5efd4c81f0a38435cb4a0a2495.json')//nora
+        .then(function (response){
+            return response.json();
+        })
+        .then (function (element){
+            console.log(element)
+            let respArray = Object.entries(element);
+            drawCircle(respArray,75);
+
+        });
+    fetch('https://bacit.info/hwr/20221107123754-96d86078d416226a2fd5776da1827910.json')//sander
+        .then(function (response){
+            return response.json();
+        })
+        .then (function (element){
+            console.log(element)
+            let respArray = Object.entries(element);
+            drawCircle(respArray,100);
+
+        });
+    fetch('https://bacit.info/hwr/20221107123800-fd34db80187a62043c7aef71e6831d52.json')//omar
+        .then(function (response){
+            return response.json();
+        })
+        .then (function (element){
+            console.log(element)
+            let respArray = Object.entries(element);
+            drawCircle(respArray,125);
+
+        });
+    fetch('https://bacit.info/hwr/20221107164230-6f0452b7549edddbdbbc5c073125b2da.json')//samet
+        .then(function (response){
+            return response.json();
+        })
+        .then (function (element){
+            console.log(element)
+            let respArray = Object.entries(element);
+            drawCircle(respArray,150);
+
+        });
+
+    function  drawCircle(array, num){ /* denne funksjonen tegner fargerike sirkler på canvas etter hentet informasjon fra server.
+         funksjonen tar to parameter, en array list og et nummer. Array list inkluderer data som har endret fra json format. Nummer
+         blir brukt for å  */
+        var x = 165 ; // denne  variabelen er startpunktet til  linjer
+        var y = 50;
+        var r = 5;
+        const randColor = () =>  { // denne metoden produserer random color *tatt fra stackoverflow
+            return "#" + Math.floor(Math.random()*16777215).toString(16).padStart(6, '0').toUpperCase();
+        }
+        let colorX = randColor();
+        //tegner sirkler  ved siden av navner.
+        context.beginPath() // denne metoden starter en ny path slik at det blir mulig å tegne ulike type linjer eller former
+        context.arc(750, y + num, r, 0, Math.PI*2, false); //arc() method lager en sirkel etter sine parameter
+        context.fillStyle = colorX; // denne property setter eller returnerer en farge
+        context.fill(); // fill() methoden fyller gjeldende tegning
+        context.lineWidth = 2; // setter linje bredde
+        context.strokeStyle = colorX; // denne property gir en spesifik farge eller mønster for strekene rundt former
+        context.stroke(); // tegner strokene
+        context.closePath() // metoden til Canvas 2D API forsøker å legge til en rett linje fra gjeldende punkt til starten av gjeldende underbane.
+
+        context.fillStyle = colorX;
+        context.fillText(array[0][1], 770,y + num); // skriver navner på høyre side
+        //context.fillText(array[1][1], 820,y+ num);
+
+        for (i = 1; i <= array.length-3; i++){ // denne loop går gjennom array listen
+            if (array[i][0] === "MoNa"){ // sjekker om det er riktig keyword og tegner sirkelen etter verdien dersom key er riktig
+                let newX = ((400*parseInt(array[i][1]))/10 + x); // justerer verdien fordi input og out put linjer er ulike lengder
+                newX = controlX(newX); // justerer verdien dersom bruker har valgt maksimum verdier  på input side
+                console.log(array[i][1]);
+                context.beginPath()
+                context.arc(newX, y, r, 0, Math.PI*2, false);
+                context.fillStyle = colorX;
+                context.fill();
+                context.lineWidth = 2;
+                context.strokeStyle = colorX;
+                context.stroke();
+                context.closePath()
+            }  else if (array[i][0] === "SaAl" ){
+                let newX = ((400*parseInt(array[i][1]))/10 + x);
+                newX = controlX(newX);
+                console.log(array[i][1]);
+                context.beginPath()
+                context.arc(newX, y +50,r, 0, Math.PI*2, false);
+                context.fillStyle =colorX;
+                context.fill();
+                context.lineWidth = 2;
+                context.strokeStyle =colorX;
+                context.stroke();
+                context.closePath()
+            } else if (array[i][0] === "FaFl"){
+                let newX = ((400*parseInt(array[i][1]))/10 + x);
+                newX = controlX(newX);
+                console.log(array[i][1]);
+                context.beginPath()
+                context.arc(newX, y +100,r, 0, Math.PI*2, false);
+                context.fillStyle =colorX;
+                context.fill();
+                context.lineWidth = 2;
+                context.strokeStyle = colorX;
+                context.stroke();
+                context.closePath()
+            } else if (array[i][0] === "OnSa") {
+                let newX = (400*parseInt(array[i][1])/10 + x);
+                newX = controlX(newX);
+                console.log(array[i][1]);
+                context.beginPath()
+                context.arc(newX, y + 150, r, 0, Math.PI * 2, false);
+                context.fillStyle = colorX;
+                context.fill();
+                context.lineWidth = 2;
+                context.strokeStyle =colorX;
+                context.stroke();
+                context.closePath()
+            } else if (array[i][0] === "BaCh") {
+                let newX = ((400*parseInt(array[i][1]))/10 + x);
+                newX = controlX(newX);
+                console.log(array[i][1]);
+                context.beginPath()
+                context.arc(newX, y + 200, r, 0, Math.PI * 2, false);
+                context.fillStyle = colorX;
+                context.fill();
+                context.lineWidth = 2;
+                context.strokeStyle =colorX;
+                context.stroke();
+                context.closePath()
+            } else if (array[i][0] === "VeMe") {
+                let newX = ((400*parseInt(array[i][1]))/10 + x);
+                newX = controlX(newX);
+                console.log(array[i][1]);
+                context.beginPath()
+                context.arc(newX, y + 250, r, 0, Math.PI * 2, false);
+                context.fillStyle = colorX;
+                context.fill();
+                context.lineWidth = 2;
+                context.strokeStyle =colorX;
+                context.stroke();
+                context.closePath()
+            } else if (array[i][0] === "TaMo") {
+                let newX = ((400*parseInt(array[i][1]))/10 + x);
+                newX = controlX(newX);
+                console.log(array[i][1]);
+                context.beginPath()
+                context.arc(newX, y + 300, r, 0, Math.PI * 2, false);
+                context.fillStyle = colorX;
+                context.fill();
+                context.lineWidth = 3;
+                context.strokeStyle = colorX;
+                context.stroke();
+                context.closePath()
+            } else if (array[i][0] === "ScIn") {
+                let newX = ((400*parseInt(array[i][1]))/10 + x);
+                newX = controlX(newX);
+                console.log(array[i][1]);
+                context.beginPath()
+                context.arc(newX, y + 350, r, 0, Math.PI * 2, false);
+                context.fillStyle = colorX;
+                context.fill();
+                context.lineWidth = 3;
+                context.strokeStyle = colorX;
+                context.stroke();
+                context.closePath()
+            } else if (array[i][0] === "AlEn") {
+                let newX = ((400*parseInt(array[i][1]))/10 + x);
+                newX = controlX(newX);
+                console.log(array[i][1]);
+                context.beginPath()
+                context.arc(newX, y + 400, r, 0, Math.PI * 2, false);
+                context.fillStyle = colorX;
+                context.fill();
+                context.lineWidth = 3;
+                context.strokeStyle = colorX;
+                context.stroke();
+                context.closePath()
+            } else if (array[i][0] === "AcDo") {
+                let newX = ((400*parseInt(array[i][1]))/10 + x);
+                newX = controlX(newX);
+                console.log(array[i][1]);
+                context.beginPath()
+                context.arc(newX, y + 450, r, 0, Math.PI * 2, false);
+                context.fillStyle = colorX;
+                context.fill();
+                context.lineWidth = 3;
+                context.strokeStyle = colorX;
+                context.stroke();
+                context.closePath()
+            }
+        }
+    }
+    function  controlX(xValue){//denne funksjonen sjekker om bruker har valgt maksimum verdien og dersom  det er justerer verdien
+        let newXValue = xValue;
+        if (xValue > 565){
+            newXValue = 565;
+        }
+        return newXValue;
+    }
+</script>
+</body>
+</html>
