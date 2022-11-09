@@ -1,18 +1,15 @@
 <html lang="en">
   <head>
-    <! starten på første seksjon i koden med informasjon om siden sin egenskaper og eksterne linker >
+    <!-- starten på første seksjon i koden med informasjon om siden sin egenskaper og eksterne linker -->
     <title>HowWeRoll - Input</title>
-    <!tittel>
-    <!eksterne linker>
+    <!-- tittel-->
+    <!-- eksterne linker -->
     <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Abyssinica+SIL&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Abyssinica+SIL&display=swap" rel="stylesheet" />
     <meta charset="UTF-8" />
-    <! design av nettsiden>
+    <!-- design av nettsiden -->
     <style>
       body {
         margin: 0;
@@ -74,7 +71,7 @@
         background-color: #5b6796;
       }
 
-      .copy {
+      .copy{
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
@@ -97,47 +94,47 @@
     </style>
     <! slutten på design>
   </head>
-  <! slutten på første seksjon i koden>
+  <!-- slutten på første seksjon i koden -->
   <body>
-    <! starten på innholdet i siden/>
+    <!---- starten på innholdet i siden -->
 
     <div class="ContainerInnput">
-      <! dette en er conteiner som omfanger hele siden>
+      <!-- dette en er conteiner som omfanger hele siden -->
       <div class="hovInnput">
         <div class="topnav">
-          <! denne conteiner omfanger navigasjonsbaren på siden >
-          <!Dette er navigation bar>
+          <!-- denne conteiner omfanger navigasjonsbaren på siden -->
+          <!--Dette er navigation bar -->
           <a href="index.html">Hjem</a>
-          <! a href er linker til hovedsiden og web-rapport siden>
+          <!-- a href er linker til hovedsiden og web-rapport siden -->
           <a class="active" href="input.html">Web-Form</a>
           <a href="web-rapport.html">Web-Rapport</a>
         </div>
 
         <h2>How We Roll</h2>
-        <! en overskrift>
+        <!-- en overskrift -->
         <hr />
         <br />
-        <! et mellomrom>
+        <!-- et mellomrom -->
 
         <form class="input">
-          <!Begynner med å lage form for å lage de ulike "spørsmålene i formen min>
+          <!--Begynner med å lage form for å lage de ulike "spørsmålene i formen min -->
           <p>
-            <! paragraf som en conteiner for hver spørsmål>
+            <!-- paragraf som en conteiner for hver spørsmål -->
             <label class="navn" for="navn">Navn:</label>
-            <! navnelapp for hvert spørsmål>
+            <!-- navnelapp for hvert spørsmål -->
             <input
               type="text"
               id="navn"
               name="navn"
               placeholder="Skriv inn navnet ditt"
             />
-            <! definerer type innhold, identifikasjon, navnelapp og teksten som viserer frem i netteleser>
+            <!-- definerer type innhold, identifikasjon, navnelapp og teksten som viserer frem i netteleser -->
           </p>
           <br />
           <p>
             <label for="MoNa">Morgenfugl</label>
             <input type="range" id="MoNa" name="MoNa" min="0" max="100" />
-            <!definerer type innhold, identifikasjon, navnelapp og verdi-grenser>
+            <!--definerer type innhold, identifikasjon, navnelapp og verdi-grenser -->
             <label for="MoNa">Nattugle</label>
           </p>
           <br />
@@ -202,26 +199,26 @@
           </p>
           <br />
           <button type="submit">Send inn</button>
-          <!knapp>
+          <!--knapp -->
           <br />
         </form>
-        <! slutten på spørreskjema>
+        <!-- slutten på spørreskjema -->
       </div>
 
       <div class="results">
-        <! omfanger overskrift for resultater>
+        <!-- omfanger overskrift for resultater -->
         <h2>Form Data</h2>
-        <! oerskrift for data resultater>
+        <!-- oerskrift for data resultater -->
         <pre></pre>
       </div>
       <script>
-        // From https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch (seen 2021-09-27)
+        // Hentet fra https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch (seen 2022-01-11)
         // Example POST method implementation using fetch:
         async function postData(url = "", data = {}) {
           // Default options are marked with *
           const response = await fetch(url, {
-            method: "POST", // *GET, POST, PUT, DELETE, etc.
-            mode: "cors", // no-cors, *cors, same-origin
+            method: "POST", // POST blir brukt til å sende data til en server for å opprette/oppdatere en ressurs.
+            mode: "cors", // This is used to determine if cross-origin requests lead to valid responses, and which properties of the response are readable. (https://developer.mozilla.org/en-US/docs/Web/API/Request/mode)
             cache: "no-cache", // *default, no-cache, reload, force-cache,only-if-cached
             credentials: "same-origin", // include, *same-origin, omit
             headers: {
@@ -235,17 +232,17 @@
           return response.json(); // parses JSON response into native JavaScriptobjects
         }
 
-        function handleSubmit(event) {
+        function handleSubmit(event) { //Denne funksjonen fungerer når man trykker "submitt" knappen. Denne funksjonen behandler dataen, og sender det til eksternal server.
           event.preventDefault();
-          const data = new FormData(event.target);
-          const formJSON = Object.fromEntries(data.entries());
+          const data = new FormData(event.target); //Denne variabelen blir lik til en JS-objekt som får data fra event parameter.
+          const formJSON = Object.fromEntries(data.entries()); //fromEntries funksjonen tar en dataliste og endrer det til en JS-objekt.
           const results = document.querySelector(".results pre");
-          postData("https://bacit.info/", formJSON).then((data) => {
-            results.innerText = JSON.stringify(data, null, 2);
+          postData("https://bacit.info/", formJSON).then((data) => { //Denne funksjonen vi implementerte lengre oppe, som sender data til eksternal server, som JSON format.
+            results.innerText = JSON.stringify(data, null, 2); //Denne koden gir/viser hva som ble sendt til eksternal server.
           });
         }
         const form = document.querySelector("form");
-        form.addEventListener("submit", handleSubmit);
+        form.addEventListener("submit", handleSubmit); //Når man trykker submit, starter handleSubmit funksjonen.
       </script>
 
       <div class="copy">
