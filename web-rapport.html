@@ -5,31 +5,42 @@
     <title>Title</title>
     <style>
         #report{
-            background-color: #ffffff;
+            padding-left: 0; /*Center align canvas elementet*/
+            padding-right: 0;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+            width: 800px;
         }
-        .topnav {
+        body { 
+        margin: 0;
+        font-family: "Abyssinica SIL", serif;
+        background-color: white;
+        color: #5b6796;
+      }
+        .topnav { /*Lager navigation bar*/
             overflow: hidden;
             background-color: lightblue;
         }
         h2 {
             text-align: center;
         }
-
+        /*Horisontal navigation bar er hentet fra w3schools.com*/
         .topnav a {
             float: left;
             color: #f2f2f2;
             text-align: center;
             padding: 14px 16px;
-            text-decoration: none;
-            font-size: 17px;
+            text-decoration: none; /*Ingen dekorasjon på teksten, tar vekk understreken*/
+            font-size: 17px; /*Setter leselig tekststørrelse*/
         }
 
-        .topnav a:hover {
+        .topnav a:hover { /*Setter hover, når du holder pilen over*/
             background-color: #ddd;
             color: white;
         }
 
-        .topnav a.active {
+        .topnav a.active { /*Markerer siden som er aktiv i navigation bar*/
             background-color: #ddd;
             color: white;
         }
@@ -37,12 +48,14 @@
     </style>
 </head>
 <body>
+    <!--Lager navigation bar-->
 <div class="topnav">
-    <a href="index.html">Home</a>
-    <a href="input.html">Input</a>
-    <a class="active" href="web-rapport.html">Output</a>
-    <h2>How We Roll</h2>
+    <a href="index.html">Hjem</a>
+    <a href="input.html">Web-Form</a>
+    <a class="active" href="web-rapport.html">Web-Rapport</a>
 </div>
+<h2>How We Roll</h2>
+<br>
 <canvas id = "report" class = "canvas" width="1000px" height="850px"></canvas> <!-- det er laget et område ved bruk av canvas api for å tegne -->
 <script>
     var canvas = document.getElementById("report"); // her ble det tatt canvas element med report id for å bruke i  javascript
