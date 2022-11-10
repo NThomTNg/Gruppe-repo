@@ -4,7 +4,7 @@
   padding: 0;
 }
 
-/*Oversiden*/
+/*Oversiden */
 
 .header {
   min-height: 100vh;
@@ -16,6 +16,7 @@
   position: relative;
 }
 .text-box {
+  /*utseende på tekst i oversiden*/
   width: 90%;
   color: aliceblue;
   position: absolute;
@@ -56,11 +57,13 @@ body {
 }
 
 .topnav a:hover {
+  /*hoved når pilen er over elementet*/
   background-color: #ddd;
   color: white;
 }
 
 .topnav a.active {
+  /*blir aktiv når man trykker*/
   background-color: #ddd;
   color: white;
 }
@@ -81,7 +84,7 @@ body {
 .row {
   margin: auto;
   margin-top: 5%;
-  width: 1800px;
+  width: 1800px; /*skpaer plass for horisontal plassering av visittkortene */
   justify-content: space-between;
 }
 .wrapper {
@@ -95,11 +98,11 @@ body {
   background: rgb(172, 219, 228);
   border-radius: 10px;
   margin: 15px;
-  float: left;
+  float: left; /*gir riktig start på plassering (venstre side)*/
   padding: 15px;
   display: flex;
   position: relative;
-  transition: 0.5s;
+  transition: 0.5s; /*gjør hover effekt saktere/gir mer flyt */
 }
 .Medlemmer-col p {
   margin: 20px;
