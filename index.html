@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+<!DOCTYPE html> <!-- versjon/ type dokument vi har -->
 <html lang="en" xmlns="http://www.w3.org/1999/html">
-<head>
+<head> <!-- starten på første seksjon i koden med informasjon om siden sin egenskaper og eksterne linker -->
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>How we roll</title>
+    <title>How we roll</title> <!-- tittel -->
     <!--Font som blir brukt i hovedsiden-->
     <link rel="stylesheet" href="style1.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -25,7 +25,7 @@
 </div>
 
 <!--Topnav er en navigationbar på toppen av nettsiden for å navigere seg gjennom nettsiden-->
-
+<!-- a href er linker til hovedsiden og web-rapport siden -->
 <div class="topnav">
     <a class="active" href="index.html">Hjem</a>
     <a href="input.html">Web-Form</a>
@@ -35,15 +35,15 @@
 <div style="padding-left:16px">
 </div>
 
-<!---Egen seksjon separat for oversiden. Seksjonen er for gruppemedlemm visitkort-->
+<!--Egen seksjon separat for oversiden. Seksjonen er for gruppemedlemm visitkort-->
 
 <section class="Medlemmer">
-    <h1 style="color:aliceblue;">Gruppemedlemmer av 10A</h1>
-   <div class = "wrapper">
-        <div class="row">
-            <div class="Medlemmer-col">
+    <h1 style="color:aliceblue;">Gruppemedlemmer av 10A</h1> <!-- overskrift -->
+   <div class = "wrapper"> <!-- conteiner som omfanger alle visitkortene -->
+        <div class="row"> 
+            <div class="Medlemmer-col"> <!-- conteiner som omfanger en individ sitt visitkort -->
             <div>
-            <img src="img/thomas.jpg"alt="Thomas"/>
+            <img src="img/thomas.jpg"alt="Thomas"/> <!-- bilde av et medlem -->
             <h3>Thomas</h3>
             </div>
             <p style ="">Hei! Jeg heter&nbsp; <!--Beskrivelse av medlemmer i gruppe 10A/informasjon som står i visitkortene-->
@@ -141,7 +141,7 @@
 </div>
 </section>
 <script> //Script for beskrivelse av medlemmer i gruppe 10A/informasjon som står i visitkortene
-    fetch('https://bacit.info/hwr/20221108145201-a2df4199a700c1020912de9fa0a259f4.json') //Henter informasjon fra bacit server. Skjema ble fylt ut av medlemmer slik at vi kunne vise det frem i visitkortene.
+    fetch('https://bacit.info/hwr/20221108145201-a2df4199a700c1020912de9fa0a259f4.json') //Henter data fra bacit server. Skjema ble fylt ut av medlemmer slik at vi kunne vise det frem i visitkortene.
         .then(function (resp){
             return resp.json();
         })

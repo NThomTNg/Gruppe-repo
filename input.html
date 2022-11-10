@@ -1,36 +1,37 @@
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- starten på første seksjon i koden med informasjon om siden sin egenskaper og eksterne linker -->
-    <title>HowWeRoll - Input</title>
-    <!-- tittel-->
-    <!-- eksterne linker -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>How we roll - Input</title>
+
+    <!-- eksterne linker og font som blir brukt -->
     <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Abyssinica+SIL&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Abyssinica+SIL&display=swap"
+      rel="stylesheet"
+    />
     <meta charset="UTF-8" />
     <!-- design av nettsiden -->
     <style>
       body {
+        /*omfanger hele siden*/
         margin: 0;
         font-family: "Abyssinica SIL", serif;
         color: white;
       }
 
+      hr {
+        width: 80%;
+        border: 1px solid white;
+      }
       .topnav {
         /*navigasjonbar, bakgrunn*/
         overflow: hidden;
         background-color: lightblue;
-      }
-
-      input[type="range"] {
-        /*design av slidere i spørreskjema */
-        width: 280px;
-      }
-
-      hr {
-        width: 80%;
-        border: 1px solid white;
       }
 
       .topnav a {
@@ -54,11 +55,6 @@
 
       .ContainerInput {
         display: grid;
-        background-color: white;
-        height: 100px;
-        grid-gap: 0;
-        right: 200px;
-        margin: auto;
       }
 
       .hovInput {
@@ -71,12 +67,17 @@
         background-color: #5b6796;
       }
 
-      .copy{
+      .copy {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
         align-items: normal;
         background-color: #5b6796;
+      }
+
+      input[type="range"] {
+        /*design av slidere i spørreskjema */
+        width: 280px;
       }
 
       button {
@@ -92,20 +93,16 @@
         margin: 10px;
       }
     </style>
-    <! slutten på design>
   </head>
-  <!-- slutten på første seksjon i koden -->
+
   <body>
-    <!---- starten på innholdet i siden -->
+    <!-- starten på innholdet i siden -->
 
     <div class="ContainerInput">
       <!-- dette en er conteiner som omfanger hele siden -->
       <div class="hovInput">
         <div class="topnav">
-          <!-- denne conteiner omfanger navigasjonsbaren på siden -->
-          <!--Dette er navigation bar -->
           <a href="index.html">Hjem</a>
-          <!-- a href er linker til hovedsiden og web-rapport siden -->
           <a class="active" href="input.html">Web-Form</a>
           <a href="web-rapport.html">Web-Rapport</a>
         </div>
@@ -114,12 +111,13 @@
         <!-- en overskrift -->
         <hr />
         <br />
-        <!-- et mellomrom -->
+        <!-- mellomrom -->
 
         <form class="input">
-          <!--Begynner med å lage form for å lage de ulike "spørsmålene i formen min -->
+          <!-- spørreskjema  -->
+
           <p>
-            <!-- paragraf som en conteiner for hver spørsmål -->
+            <!-- paragraf for hvert enkelt spørsmål -->
             <label class="navn" for="navn">Navn:</label>
             <!-- navnelapp for hvert spørsmål -->
             <input
@@ -209,7 +207,7 @@
         <!-- omfanger overskrift for resultater -->
         <h2>Form Data</h2>
         <!-- overskrift for data resultater -->
-        <pre></pre>
+        <pre></pre> <!-- element for fremvisning av resultater fra spørreskjema -->
       </div>
       <script>
         // Hentet fra https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch (2022-01-11)
@@ -230,12 +228,14 @@
           return response.json(); // parses JSON response into native JavaScriptobjects
         }
 
-        function handleSubmit(event) { //Denne funksjonen fungerer når man trykker "submitt" knappen. Denne funksjonen behandler dataen, og sender det til eksternal server.
+        function handleSubmit(event) {
+          //Denne funksjonen fungerer når man trykker "submitt" knappen. Denne funksjonen behandler dataen, og sender det til eksternal server.
           event.preventDefault();
           const data = new FormData(event.target); //Denne variabelen blir lik til en JS-objekt som får data fra event parameter.
           const formJSON = Object.fromEntries(data.entries()); //fromEntries funksjonen tar en dataliste og endrer det til en JS-objekt.
           const results = document.querySelector(".results pre");
-          postData("https://bacit.info/", formJSON).then((data) => { //Denne funksjonen vi implementerte lengre oppe, som sender data til eksternal server, som JSON format.
+          postData("https://bacit.info/", formJSON).then((data) => {
+            //Denne funksjonen vi implementerte lengre oppe, som sender data til eksternal server, som JSON format.
             results.innerText = JSON.stringify(data, null, 2); //Denne koden gir/viser hva som ble sendt til eksternal server.
           });
         }
@@ -243,7 +243,7 @@
         form.addEventListener("submit", handleSubmit); //Når man trykker submit, starter handleSubmit funksjonen.
       </script>
 
-      <div class="copy">
+      <div class="copy"> <!-- conteiner for "coperights" -->
         <h9 style="color: white">Copyright &copy; 2022 Gruppe 10 A</h9>
       </div>
     </div>
