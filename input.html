@@ -52,7 +52,7 @@
         color: white;
       }
 
-      .ContainerInnput {
+      .ContainerInput {
         display: grid;
         background-color: white;
         height: 100px;
@@ -61,7 +61,7 @@
         margin: auto;
       }
 
-      .hovInnput {
+      .hovInput {
         text-align: center;
         background-color: #5b6796;
       }
@@ -98,9 +98,9 @@
   <body>
     <!---- starten på innholdet i siden -->
 
-    <div class="ContainerInnput">
+    <div class="ContainerInput">
       <!-- dette en er conteiner som omfanger hele siden -->
-      <div class="hovInnput">
+      <div class="hovInput">
         <div class="topnav">
           <!-- denne conteiner omfanger navigasjonsbaren på siden -->
           <!--Dette er navigation bar -->
@@ -208,25 +208,23 @@
       <div class="results">
         <!-- omfanger overskrift for resultater -->
         <h2>Form Data</h2>
-        <!-- oerskrift for data resultater -->
+        <!-- overskrift for data resultater -->
         <pre></pre>
       </div>
       <script>
-        // Hentet fra https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch (seen 2022-01-11)
-        // Example POST method implementation using fetch:
+        // Hentet fra https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch (2022-01-11)
         async function postData(url = "", data = {}) {
-          // Default options are marked with *
           const response = await fetch(url, {
             method: "POST", // POST blir brukt til å sende data til en server for å opprette/oppdatere en ressurs.
-            mode: "cors", // This is used to determine if cross-origin requests lead to valid responses, and which properties of the response are readable. (https://developer.mozilla.org/en-US/docs/Web/API/Request/mode)
+            mode: "cors", // "This is used to determine if cross-origin requests lead to valid responses, and which properties of the response are readable." (https://developer.mozilla.org/en-US/docs/Web/API/Request/mode)
             cache: "no-cache", // *default, no-cache, reload, force-cache,only-if-cached
             credentials: "same-origin", // include, *same-origin, omit
             headers: {
               "Content-Type": "application/json",
-              // 'Content-Type': 'application/x-www-form-urlencoded',
+              // 'Content-Type': Indikerer at forespørselens "body" format er JSON.
             },
             redirect: "follow", // manual, *follow, error
-            referrerPolicy: "no-referrer", // no-referrer,*no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+            referrerPolicy: "no-referrer", // Referrer overskriften vil bli overlatt, og sendte data vil ikke inneholde noe henvisninginformasjon.
             body: JSON.stringify(data), // body data type must match"Content-Type"header
           });
           return response.json(); // parses JSON response into native JavaScriptobjects
