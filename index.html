@@ -148,15 +148,15 @@
         .then (function (element){
 
 
-            let array = Object.entries(element);
+            let array = Object.entries(element);// endrer formaten til en arraylist
 
             let sametName = document.getElementById("isThisSamet"); //Sjekker om det en spesefik medlemms informasjon
-            sametName.innerText = array[0][1] + ".";
+            sametName.innerText = array[0][1] + ".";// denne koden skriver brukers navnet på html
             sametName.style.cssText = "font-size : 18px; color:#000000; font-family:arial;  font-style: italic;"
             let sametEarly = document.getElementById("isSametEarlyBird"); //Sjekker hvilket nivå medlemmem ligger basert på hva de selv svarte
             sametEarly.style.cssText = "font-size : 18px; color:#000000; font-family:arial;  font-style: italic;"
-            let value = 100 - parseInt(array[1][1])
-            sametEarly.innerText = value;
+            let value = 100 - parseInt(array[1][1]);// justerer verdien for å vise mer logikk måte
+            sametEarly.innerText = value;// skriver valuen p[ html
             let sametWork = document.getElementById("workTogetherSamet");
             sametWork.innerText = array[2][1];
             sametWork.style.cssText = "font-size : 18px; color:#000000; font-family:arial;  font-style: italic;"

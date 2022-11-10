@@ -199,8 +199,8 @@
          funksjonen tar to parameter, en array list og et nummer. Array list inkluderer data som har endret fra json format. Nummer
          blir brukt for å  */
         var x = 165 ; // denne  variabelen er startpunktet til  linjer
-        var y = 50;
-        var r = 5;
+        var y = 50;// denne variabelen gir en grunleggende y verdi på kordinat systemet på canvas
+        var r = 5;// den er radius for sirkler og det kan endres ved hjelp av denne variabelen
         const randColor = () =>  { // denne metoden produserer random color ***tatt fra stackoverflow***
             return "#" + Math.floor(Math.random()*16777215).toString(16).padStart(6, '0').toUpperCase();
         }
@@ -222,7 +222,6 @@
         for (i = 1; i <= array.length-3; i++){ // denne loop går gjennom array listen
             if (array[i][0] === "MoNa"){ // sjekker om det er riktig keyword og tegner sirkelen etter verdien dersom key er riktig
                 let newX = ((400*parseInt(array[i][1]))/100 + x); // justerer verdien fordi input og out put linjer er ulike lengder
-                newX = controlX(newX); // justerer verdien dersom bruker har valgt maksimum verdier  på input side
                 console.log(array[i][1]);
                 context.beginPath()
                 context.arc(newX, y, r, 0, Math.PI*2, false);
@@ -234,7 +233,6 @@
                 context.closePath()
             }  else if (array[i][0] === "SaAl" ){
                 let newX = ((400*parseInt(array[i][1]))/100 + x);
-                newX = controlX(newX);
                 console.log(array[i][1]);
                 context.beginPath()
                 context.arc(newX, y +50,r, 0, Math.PI*2, false);
@@ -246,7 +244,6 @@
                 context.closePath()
             } else if (array[i][0] === "FaFl"){
                 let newX = ((400*parseInt(array[i][1]))/100 + x);
-                newX = controlX(newX);
                 console.log(array[i][1]);
                 context.beginPath()
                 context.arc(newX, y +100,r, 0, Math.PI*2, false);
@@ -258,7 +255,6 @@
                 context.closePath()
             } else if (array[i][0] === "OnSa") {
                 let newX = (400*parseInt(array[i][1])/100 + x);
-                newX = controlX(newX);
                 console.log(array[i][1]);
                 context.beginPath()
                 context.arc(newX, y + 150, r, 0, Math.PI * 2, false);
@@ -270,7 +266,6 @@
                 context.closePath()
             } else if (array[i][0] === "BaPo") {
                 let newX = ((400*parseInt(array[i][1]))/100 + x);
-                newX = controlX(newX);
                 console.log(array[i][1]);
                 context.beginPath()
                 context.arc(newX, y + 200, r, 0, Math.PI * 2, false);
@@ -282,7 +277,6 @@
                 context.closePath()
             } else if (array[i][0] === "MuMe") {
                 let newX = ((400*parseInt(array[i][1]))/100 + x);
-                newX = controlX(newX);
                 console.log(array[i][1]);
                 context.beginPath()
                 context.arc(newX, y + 250, r, 0, Math.PI * 2, false);
@@ -294,7 +288,6 @@
                 context.closePath()
             } else if (array[i][0] === "SnGå") {
                 let newX = ((400*parseInt(array[i][1]))/100 + x);
-                newX = controlX(newX);
                 console.log(array[i][1]);
                 context.beginPath()
                 context.arc(newX, y + 300, r, 0, Math.PI * 2, false);
@@ -306,7 +299,6 @@
                 context.closePath()
             } else if (array[i][0] === "AvRi") {
                 let newX = ((400*parseInt(array[i][1]))/100 + x);
-                newX = controlX(newX);
                 console.log(array[i][1]);
                 context.beginPath()
                 context.arc(newX, y + 350, r, 0, Math.PI * 2, false);
@@ -318,7 +310,6 @@
                 context.closePath()
             } else if (array[i][0] === "AlEn") {
                 let newX = ((400*parseInt(array[i][1]))/100 + x);
-                newX = controlX(newX);
                 console.log(array[i][1]);
                 context.beginPath()
                 context.arc(newX, y + 400, r, 0, Math.PI * 2, false);
@@ -330,7 +321,6 @@
                 context.closePath()
             } else if (array[i][0] === "AkIk") {
                 let newX = ((400*parseInt(array[i][1]))/100 + x);
-                newX = controlX(newX);
                 console.log(array[i][1]);
                 context.beginPath()
                 context.arc(newX, y + 450, r, 0, Math.PI * 2, false);
@@ -342,7 +332,6 @@
                 context.closePath()
             } else if (array[i][0] === "OvKo") {
                 let newX = ((400*parseInt(array[i][1]))/100 + x);
-                newX = controlX(newX);
                 console.log(array[i][1]);
                 context.beginPath()
                 context.arc(newX, y + 500, r, 0, Math.PI * 2, false);
@@ -355,13 +344,7 @@
             }
         }
     }
-    function  controlX(xValue){//denne funksjonen sjekker om bruker har valgt maksimum verdien og dersom  det er justerer verdien
-        let newXValue = xValue;
-        if (xValue > 565){
-            newXValue = 565;
-        }
-        return newXValue;
-    }
+
 </script>
 </body>
 </html>
