@@ -84,7 +84,7 @@ body {
 .row {
   margin: auto;
   margin-top: 5%;
-  width: 1800px; /*skpaer plass for horisontal plassering av visittkortene */
+  width: 1800px; /*skaper plass for horisontal plassering av visittkortene */
   justify-content: space-between;
 }
 .wrapper {
