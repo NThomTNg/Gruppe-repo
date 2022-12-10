@@ -5,10 +5,8 @@
     <title>How we roll - Output</title>
     <style>
       #report {
-        padding-left: 0; /*Center align canvas elementet*/
-        padding-right: 0;
-        margin-left: auto;
-        margin-right: auto;
+        margin: auto;
+        padding-left: 150px;
         display: block;
         width: 800px;
       }
@@ -21,10 +19,17 @@
       .topnav {
         /*Lager navigation bar*/
         overflow: hidden;
+        /* position: fixed;
+        width: 100%;*/ 
         background-color: lightblue;
       }
       h2 {
         text-align: center;
+      }
+
+      hr {
+        width: 80%;
+        border: 1px solid #5b6796;
       }
       /*Horisontal navigation bar er hentet fra w3schools.com*/
       .topnav a {
@@ -47,6 +52,14 @@
         background-color: #ddd;
         color: white;
       }
+
+      p {
+        margin: 3% 10% 5% 10%;
+        color: black;
+        padding: 20px;
+        border-radius: 10px;
+        background-color: rgb(91, 103, 200, 0.3);
+      }
     </style>
   </head>
   <body>
@@ -57,9 +70,19 @@
       <a href="Tprojects.html">Tidligere prosjekter</a>
     </div>
     <h2>How We Roll</h2>
-    <br />
+    <hr />
+
+    <p>
+      Dette er en visuell fremstilling av resultatene til alle medlemmer.
+      Svarene fra hver enkelt spørsmål viser til hvordan samarbeid mellom hver
+      enkelt individ kan fungere best mulig i et større sammenheng. Punktene som
+      ligger mest på utlkanten av linjene viser til de medlemmene som har mest
+      ulike vaner og - eller som jobber på de mest forkjsellige måter i forhold
+      til hverandre.
+    </p>
     <canvas id="report" class="canvas" width="1000px" height="850px"></canvas>
     <!-- det er laget et område ved bruk av canvas api for å tegne -->
+
     <script>
       var canvas = document.getElementById("report"); // her ble det tatt canvas element med report id for å bruke i  javascript
       var context = canvas.getContext("2d");
