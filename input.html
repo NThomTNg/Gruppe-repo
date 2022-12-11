@@ -127,12 +127,7 @@
             <!-- paragraf for hvert enkelt spørsmål -->
             <label class="navn" for="navn">Navn:</label>
             <!-- navnelapp for hvert spørsmål -->
-            <input
-              type="text"
-              id="navn"
-              name="navn"
-              placeholder="Skriv inn navnet ditt"
-            />
+            <input type="text" pattern="^[a-zA-Z]+$" id="navn" title="Ingen spesialtegn eller tall kan brukes." placeholder="Skriv inn navnet ditt" required/>
             <!-- definerer type innhold, identifikasjon, navnelapp og teksten som viserer frem i netteleser -->
           </p>
           <br />
