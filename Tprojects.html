@@ -1,109 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tidligere prosjekter</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Abyssinica+SIL&display=swap"
-      rel="stylesheet"
-    />
-    <style>
-.text-over {
-  /*utseende på tekst i oversiden*/
-  width: 90%;
-  color: aliceblue;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-}
-.text-over h1 {
-  font-size: 70px;
-  position: center;
-}
-.text-over p {
-  margin: 10px 0 40px;
-  font-size: 14px;
-  color: aliceblue;
-}
-      #report {
-        padding-left: 0; /*Center align canvas elementet*/
-        padding-right: 0;
-        margin-left: auto;
-        margin-right: auto;
-        display: block;
-        width: 800px;
-      }
-      body {
-        margin: 0;
-        font-family: Arial, Helvetica, sans-serif;
-        background-color: white;
-        color: #5b6796;
-      }
-      .topnav {
-        /*Lager navigation bar*/
-        overflow: hidden;
-        background-color: lightblue;
-      }
-      h2 {
-        text-align: center;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tidligere prosjekter</title>
+  <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Abyssinica+SIL&display=swap" rel="stylesheet"/>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: white;
+    }
+    .topnav {
+      /*Lager navigation bar*/
+      overflow: hidden;
+      background-color: lightblue;
+    }
+
+    /*Horisontal navigation bar er hentet fra w3schools.com*/
+    .topnav a {
+      float: left;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none; /*Ingen dekorasjon på teksten, tar vekk understreken*/
+      font-size: 17px; /*Setter leselig tekststørrelse*/
+    }
+
+    .topnav a:hover {
+      /*Setter hover, når du holder pilen over*/
+      background-color: #ddd;
+      color: white;
+    }
+
+    .topnav a.active {
+      /*Markerer siden som er aktiv i navigation bar*/
+      background-color: #ddd;
+      color: white;
+    }
 
     h1 {
       text-align: center;
     }
-      /*Horisontal navigation bar er hentet fra w3schools.com*/
-      .topnav a {
-        float: left;
-        color: #f2f2f2;
-        text-align: center;
-        padding: 14px 16px;
-        text-decoration: none; /*Ingen dekorasjon på teksten, tar vekk understreken*/
-        font-size: 17px; /*Setter leselig tekststørrelse*/
-      }
+    hr {
+      width: 80%;
+      border: 1px solid #5b6796;
+    }
 
-      .topnav a:hover {
-        /*Setter hover, når du holder pilen over*/
-        background-color: #ddd;
-        color: white;
-      }
+    #underTittel{
+      color: black;
+      padding: 20px;
+      border-radius: 10px;
+      background-color: rgb(91, 103, 200, 0.3);
+      left: 50%;
+      position: relative;
+      transform: translate(-50%, -50%);
+    }
+    .tyrkia{
+      color: black;
+      position: relative;
 
-      .topnav a.active {
-        /*Markerer siden som er aktiv i navigation bar*/
-        background-color: #ddd;
-        color: white;
-      }
+    }
+    .russland{
+      color: black;
+      margin-left: auto;
+      margin-right: 0;
+    }
+    .estonia{
+      color: black;
+      margin-left: auto;
+      margin-right: 0;
+    }
+  </style>
+</head>
+<body>
+<div class="topnav">
+  <a href="index.html">Hjem</a>
+  <a href="input.html">Web-Form</a>
+  <a href="web-rapport.html">Web-Rapport</a>
+  <a class="active" href="Tprojects.html">Tidligere prosjekter</a>
+</div>
+<div class="text-over">
+  <h1 style="color: #5b6796; font-size: 30px;">Tidligere prosjekter</h1>
+  <hr/><br>
+  <h3 id="underTittel" style="text-align: center; font-size: 20px">Dette er våre tidligere prosjekter innen IS-114 som vi i Gruppe 10A har jobbet sammen i gruppe.</h3>
+</div>
 
-      p {
-        margin: 3% 25% 30% 25%;
-        color: black;
-        padding: 20px;
-        border-radius: 10px;
-        background-color: rgb(91, 103, 200, 0.3);
-        position: relative;
-      }
-      hr {
-        width: 80%;
-        border: 1px solid #5b6796;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="topnav">
-      <a class="active" href="index.html">Hjem</a>
-      <a href="input.html">Web-Form</a>
-      <a href="web-rapport.html">Web-Rapport</a>
-      <a href="Tprojects.html">Tidligere prosjekter</a>
-    </div class="text-over">
-    <h1>Tidligere prosjekter</h1>
-    <hr />
-    <p>Dette er våre tidligere prosjekter innen IS-114 som vi i Gruppe 10A har jobbet sammen i gruppe.</p>
-    </div>
-  </body>
+<div class="tyrkia" align="right">
+  <p>Tyrkia flagget som medlemmet lagde med bruk av canvas&emsp;</p>
+  <br>
+  <img src="img/tyrkia.PNG" alt="Tyrkia" height="200px">&emsp;
+</div><br>
+
+<div class="russland";>
+  <p id="flaggRussland">&emsp;Russland flaget som medlemmene lagde med bruk av p-style</p><br>
+  &emsp;<img src="img/Russland.PNG" alt="Russland" height="200px">
+  <img src="img/arrowdown.png" alt="pilNed" width="1000px" height="200px">
+</div><br>
+
+<div class="estonia" align="right">
+  <p id="flaggEstonia">Estonia flagget som medlemmene lagde med bruk av CSS.&emsp;</p>
+  <div class="bildeEstonia">
+    <img src="img/arrowdown_motsatt.png" alt="pilNed" width="1000px" height="200px">
+    <img src="img/Estonia.PNG" alt="Estonia" height="200px">&emsp;
+  </div>
+</div>
+
+
+
+</body>
 </html>
-
