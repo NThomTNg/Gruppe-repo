@@ -395,5 +395,38 @@
         }
       }
     </script>
+    <script>// DENNE SCRIPTEN ER FOR TESTING OG INKLUDERER NOEN EKSEMPLER FOR TESTER SOM BLE KJØRTE UNDER UTVIKLINGEN
+    /*   {
+        "navn": "john",
+       "MoNa": "73",
+        "SaAl": "21",
+        "FaFl": "72",
+        "OnSa": "12",
+        "BaPo": "80",
+        "MuMe": "38",
+        "SnGå": "72",
+        "AvRi": "28",
+        "AlEn": "86",
+        "AkIk": "60",
+        "OvKo": "77",
+        "trxid": "fb43a75ceba157b4ff7b755ae4486e9e",
+        "time": "20221211140559"
+    }*/
+    let navnInput = "JOHN";
+    let numInput = 38;
+    fetch('https://bacit.info/hwr/20221211140559-fb43a75ceba157b4ff7b755ae4486e9e.json')
+            .then(function (resp){
+              return resp.json();
+
+            })
+            .then (function (element){
+              console.log(element);
+              let array = Object.entries(element);
+              let msg = "testen er feil";
+              console.assert(navnInput ===array[0][1].toUpperCase(), msg);
+              console.assert(numInput === parseInt(array[6][1]), msg );
+              console.log("testen er godkjent");
+            });
+    </script>
   </body>
 </html>
