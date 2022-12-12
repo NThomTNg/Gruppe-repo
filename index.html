@@ -142,7 +142,8 @@
         </div>
 </div>
 </section>
-<script> //Script for beskrivelse av medlemmer i gruppe 10A/informasjon som står i visitkortene
+<script> //Script for beskrivelse av medlemmer i gruppe 10A/informasjon som står i visitkortene.
+// Det blir kommentert for bare en person fordi de andre er også gjort på samme måte. Det var vanskelig å fikse code-dublication(eller vi kunne ikke finne en måte å gjøre) på grunn av bruk av ulike html elementer.
     fetch('https://bacit.info/hwr/20221108145201-a2df4199a700c1020912de9fa0a259f4.json') //Henter data fra bacit server. Skjema ble fylt ut av medlemmer slik at vi kunne vise det frem i visitkortene.
         .then(function (resp){
             return resp.json();
@@ -152,19 +153,19 @@
 
             let array = Object.entries(element);// endrer formaten til en arraylist
 
-            let sametName = document.getElementById("isThisSamet"); //Sjekker om det en spesefik medlemms informasjon
+            let sametName = document.getElementById("isThisSamet"); //får elementen som er det samme navnet fra html
             sametName.innerText = array[0][1] + ".";// denne koden skriver brukers navnet på html
-            sametName.style.cssText = "font-size : 18px; color:#000000; font-family:arial;  font-style: italic;"
-            let sametEarly = document.getElementById("isSametEarlyBird"); //Sjekker hvilket nivå medlemmem ligger basert på hva de selv svarte
-            sametEarly.style.cssText = "font-size : 18px; color:#000000; font-family:arial;  font-style: italic;"
+            sametName.style.cssText = "font-size : 18px; color:#000000; font-family:arial;  font-style: italic;"; //gir en bedre stil i teksten
+            let sametEarly = document.getElementById("isSametEarlyBird"); //får elementen som er det samme navnet fra html
+            sametEarly.style.cssText = "font-size : 18px; color:#000000; font-family:arial;  font-style: italic;";  //gir en bedre stil i teksten
             let value = 100 - parseInt(array[1][1]);// justerer verdien for å vise mer logikk måte
-            sametEarly.innerText = value;// skriver valuen p[ html
-            let sametWork = document.getElementById("workTogetherSamet");
-            sametWork.innerText = array[2][1];
-            sametWork.style.cssText = "font-size : 18px; color:#000000; font-family:arial;  font-style: italic;"
-            let sametfast = document.getElementById("fastTidSamet");
-            sametfast.innerText= array[3][1];
-            sametfast.style.cssText = "font-size : 18px; color:#000000; font-family:arial;  font-style: italic;"
+            sametEarly.innerText = value;// skriver valuen på html
+            let sametWork = document.getElementById("workTogetherSamet"); //får elementen som er det samme navnet fra html
+            sametWork.innerText = array[2][1];// skriver valuen på html
+            sametWork.style.cssText = "font-size : 18px; color:#000000; font-family:arial;  font-style: italic;"//gir en bedre stil i teksten
+            let sametfast = document.getElementById("fastTidSamet");//får elementen som er det samme navnet fra html
+            sametfast.innerText= array[3][1];// skriver valuen på html
+            sametfast.style.cssText = "font-size : 18px; color:#000000; font-family:arial;  font-style: italic;"//gir en bedre stil i teksten
         });//3 spørsmålene som blir vist på visitkortene er det som blir sjekket
     fetch('https://bacit.info/hwr/20221108145253-c516c75c6f65f7178076379be6d438df.json')
         .then(function (resp){
