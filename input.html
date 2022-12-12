@@ -5,8 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>How we roll - Input</title>
-
-    <!-- eksterne linker og font som blir brukt -->
     <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -14,8 +12,6 @@
       href="https://fonts.googleapis.com/css2?family=Abyssinica+SIL&display=swap"
       rel="stylesheet"
     />
-    <meta charset="UTF-8" />
-    <!-- design av nettsiden -->
     <style>
       body {
         /*omfanger hele siden*/
@@ -34,7 +30,6 @@
       }
 
       .topnav {
-        /*navigasjonbar, bakgrunn*/
         overflow: hidden;
         position: fixed;
         width: 100%;
@@ -128,7 +123,14 @@
             <!-- paragraf for hvert enkelt spørsmål -->
             <label class="navn" for="navn">Navn:</label>
             <!-- navnelapp for hvert spørsmål -->
-            <input type="text" pattern="^[a-zA-Z]+$" id="navn" title="Ingen spesialtegn eller tall kan brukes." placeholder="Skriv inn navnet ditt" required/>
+            <input
+              type="text"
+              pattern="^[a-zA-Z]+$"
+              id="navn"
+              title="Ingen spesialtegn eller tall kan brukes."
+              placeholder="Skriv inn navnet ditt"
+              required
+            />
             <!-- definerer type innhold, identifikasjon, navnelapp og teksten som viserer frem i netteleser -->
           </p>
           <br />
