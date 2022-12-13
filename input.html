@@ -18,6 +18,7 @@
         margin: 0;
         font-family: Arial, Helvetica, sans-serif;
         color: white;
+        display: grid;
       }
 
       h2 {
@@ -53,10 +54,6 @@
       .topnav a.active {
         background-color: #ddd;
         color: white;
-      }
-
-      .ContainerInput {
-        display: grid;
       }
 
       .hovInput {
@@ -100,159 +97,158 @@
   <body>
     <!-- starten på innholdet i siden -->
 
-    <div class="ContainerInput">
-      <!-- dette en er conteiner som omfanger hele siden -->
-      <div class="hovInput">
-        <div class="topnav">
-          <a href="index.html">Hjem</a>
-          <a class="active" href="input.html">Web-Form</a>
-          <a href="web-rapport.html">Web-Rapport</a>
-          <a href="Tprojects.html">Tidligere prosjekter</a>
-        </div>
+    <!-- dette en er conteiner som omfanger spørsmål -->
+    <div class="hovInput">
+      <div class="topnav">
+        <a href="index.html">Hjem</a>
+        <a class="active" href="input.html">Web-Form</a>
+        <a href="web-rapport.html">Web-Rapport</a>
+        <a href="Tprojects.html">Tidligere prosjekter</a>
+      </div>
 
-        <h2>How We Roll</h2>
-        <!-- en overskrift -->
-        <hr />
+      <h2>How We Roll</h2>
+      <!-- en overskrift -->
+      <hr />
+      <br />
+      <!-- mellomrom -->
+
+      <form class="input">
+        <!-- spørreskjema  -->
+
+        <p>
+          <!-- paragraf for hvert enkelt spørsmål -->
+          <label class="navn" for="navn">Navn:</label>
+          <!-- navnelapp for hvert spørsmål -->
+          <input
+            type="text"
+            pattern="^[A-Za-z \s*]+$"
+            id="navn"
+            name="navn"
+            title="Ingen spesialtegn eller tall kan brukes."
+            placeholder="Skriv inn navnet ditt"
+            required
+          />
+          <!-- definerer type innhold, identifikasjon, navnelapp og teksten som viserer frem i netteleser -->
+        </p>
         <br />
-        <!-- mellomrom -->
+        <p>
+          <label for="MoNa">Morgenfugl</label>
+          <input type="range" id="MoNa" name="MoNa" min="0" max="100" />
+          <!--definerer type innhold, identifikasjon, navnelapp og verdi-grenser -->
+          <label for="MoNa">Nattugle</label>
+        </p>
+        <br />
+        <p>
+          <label for="SaAl">Jobbe sammen</label>
+          <input type="range" id="SaAl" name="SaAl" min="0" max="100" />
+          <label for="SaAl">Jobbe alene</label>
+        </p>
+        <br />
+        <p>
+          <label for="FaFl">Jobbe på faste tidspunkter</label>
+          <input type="range" id="FaFl" name="FaFl" min="0" max="100" />
+          <label for="FaFl">Jobbe fleksibelt</label>
+        </p>
+        <br />
+        <p>
+          <label for="OnSa">Jobbe online</label>
+          <input type="range" id="OnSa" name="OnSa" min="0" max="100" />
+          <label for="OnSa">Jobbe sammen (møtes)</label>
+        </p>
+        <br />
+        <p>
+          <label for="BaPo">Fortell meg bakhistorien</label>
+          <input type="range" id="BaPo" name="BaPo" min="0" max="100" />
+          <label for="BaPo">Kom til poenget</label>
+        </p>
+        <br />
+        <p>
+          <label for="MuMe">Prossere muntlig</label>
+          <input type="range" id="MuMe" name="MuMe" min="0" max="100" />
+          <label for="MuMe">Prossere mentalt</label>
+        </p>
+        <br />
+        <p>
+          <label for="SnGå">Trenger å snakke ut</label>
+          <input type="range" id="SnGå" name="SnGå" min="0" max="100" />
+          <label for="SnGå">Trenger å gå videre</label>
+        </p>
+        <br />
+        <p>
+          <label for="AvRi">Avtal tid for å snakke</label>
+          <input type="range" id="AvRi" name="AvRi" min="0" max="100" />
+          <label for="AvRi">Ring meg når du trenger meg</label>
+        </p>
+        <br />
+        <p>
+          <label for="AlEn">Alle bestemmer i gruppen</label>
+          <input type="range" id="AlEn" name="AlEn" min="0" max="100" />
+          <label for="AlEn">En gir ut oppgaver til resten</label>
+        </p>
+        <br />
+        <p>
+          <label for="AkIk">Aktiviteter for teambuilding</label>
+          <input type="range" id="AkIk" name="AkIk" min="0" max="100" />
+          <label for="AkIk">Ikke kontakt meg utenfor arbeidstid</label>
+        </p>
+        <br />
+        <p>
+          <label for="OvKo">Trenger oversikt</label>
+          <input type="range" id="OvKo" name="OvKo" min="0" max="100" />
+          <label for="OvKo">Tar det som det kommer</label>
+        </p>
+        <br />
+        <button type="submit">Send inn</button>
+        <!--knapp -->
+        <br />
+      </form>
+      <!-- slutten på spørreskjema -->
+    </div>
 
-        <form class="input">
-          <!-- spørreskjema  -->
+    <div class="results">
+      <!-- omfanger overskrift for resultater -->
+      <h2>Form Data</h2>
+      <!-- overskrift for data resultater -->
+      <pre></pre>
+      <!-- element for fremvisning av resultater fra spørreskjema -->
+    </div>
+    <script>
+      // Hentet fra https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch (2022-01-11)
+      async function postData(url = "", data = {}) {
+        const response = await fetch(url, {
+          method: "POST", // POST blir brukt til å sende data til en server for å opprette/oppdatere en ressurs.
+          mode: "cors", // "This is used to determine if cross-origin requests lead to valid responses, and which properties of the response are readable." (https://developer.mozilla.org/en-US/docs/Web/API/Request/mode)
+          cache: "no-cache", // *default, no-cache, reload, force-cache,only-if-cached
+          credentials: "same-origin", // include, *same-origin, omit
+          headers: {
+            "Content-Type": "application/json",
+            // 'Content-Type': Indikerer at forespørselens "body" format er JSON.
+          },
+          redirect: "follow", // manual, *follow, error
+          referrerPolicy: "no-referrer", // Referrer overskriften vil bli overlatt, og sendte data vil ikke inneholde noe henvisninginformasjon.
+          body: JSON.stringify(data), // body data type must match"Content-Type"header
+        });
+        return response.json(); // parses JSON response into native JavaScriptobjects
+      }
 
-          <p>
-            <!-- paragraf for hvert enkelt spørsmål -->
-            <label class="navn" for="navn">Navn:</label>
-            <!-- navnelapp for hvert spørsmål -->
-            <input
-              type="text"
-              pattern="^[a-zA-Z]+$"
-              id="navn"
-              title="Ingen spesialtegn eller tall kan brukes."
-              placeholder="Skriv inn navnet ditt"
-              required
-            />
-            <!-- definerer type innhold, identifikasjon, navnelapp og teksten som viserer frem i netteleser -->
-          </p>
-          <br />
-          <p>
-            <label for="MoNa">Morgenfugl</label>
-            <input type="range" id="MoNa" name="MoNa" min="0" max="100" />
-            <!--definerer type innhold, identifikasjon, navnelapp og verdi-grenser -->
-            <label for="MoNa">Nattugle</label>
-          </p>
-          <br />
-          <p>
-            <label for="SaAl">Jobbe sammen</label>
-            <input type="range" id="SaAl" name="SaAl" min="0" max="100" />
-            <label for="SaAl">Jobbe alene</label>
-          </p>
-          <br />
-          <p>
-            <label for="FaFl">Jobbe på faste tidspunkter</label>
-            <input type="range" id="FaFl" name="FaFl" min="0" max="100" />
-            <label for="FaFl">Jobbe fleksibelt</label>
-          </p>
-          <br />
-          <p>
-            <label for="OnSa">Jobbe online</label>
-            <input type="range" id="OnSa" name="OnSa" min="0" max="100" />
-            <label for="OnSa">Jobbe sammen (møtes)</label>
-          </p>
-          <br />
-          <p>
-            <label for="BaPo">Fortell meg bakhistorien</label>
-            <input type="range" id="BaPo" name="BaPo" min="0" max="100" />
-            <label for="BaPo">Kom til poenget</label>
-          </p>
-          <br />
-          <p>
-            <label for="MuMe">Prossere muntlig</label>
-            <input type="range" id="MuMe" name="MuMe" min="0" max="100" />
-            <label for="MuMe">Prossere mentalt</label>
-          </p>
-          <br />
-          <p>
-            <label for="SnGå">Trenger å snakke ut</label>
-            <input type="range" id="SnGå" name="SnGå" min="0" max="100" />
-            <label for="SnGå">Trenger å gå videre</label>
-          </p>
-          <br />
-          <p>
-            <label for="AvRi">Avtal tid for å snakke</label>
-            <input type="range" id="AvRi" name="AvRi" min="0" max="100" />
-            <label for="AvRi">Ring meg når du trenger meg</label>
-          </p>
-          <br />
-          <p>
-            <label for="AlEn">Alle bestemmer i gruppen</label>
-            <input type="range" id="AlEn" name="AlEn" min="0" max="100" />
-            <label for="AlEn">En gir ut oppgaver til resten</label>
-          </p>
-          <br />
-          <p>
-            <label for="AkIk">Aktiviteter for teambuilding</label>
-            <input type="range" id="AkIk" name="AkIk" min="0" max="100" />
-            <label for="AkIk">Ikke kontakt meg utenfor arbeidstid</label>
-          </p>
-          <br />
-          <p>
-            <label for="OvKo">Trenger oversikt</label>
-            <input type="range" id="OvKo" name="OvKo" min="0" max="100" />
-            <label for="OvKo">Tar det som det kommer</label>
-          </p>
-          <br />
-          <button type="submit">Send inn</button>
-          <!--knapp -->
-          <br />
-        </form>
-        <!-- slutten på spørreskjema -->
-      </div>
+      function handleSubmit(event) {
+        //Denne funksjonen fungerer når man trykker "submitt" knappen. Denne funksjonen behandler dataen, og sender det til eksternal server.
+        event.preventDefault();
+        const data = new FormData(event.target); //Denne variabelen blir lik til en JS-objekt som får data fra event parameter.
+        const formJSON = Object.fromEntries(data.entries()); //fromEntries funksjonen tar en dataliste og endrer det til en JS-objekt.
+        const results = document.querySelector(".results pre");
+        postData("https://bacit.info/", formJSON).then((data) => {
+          //Denne funksjonen vi implementerte lengre oppe, som sender data til eksternal server, som JSON format.
+          results.innerText = JSON.stringify(data, null, 2); //Denne koden gir/viser hva som ble sendt til eksternal server.
+        });
+      }
+      const form = document.querySelector("form");
+      form.addEventListener("submit", handleSubmit); //Når man trykker submit, starter handleSubmit funksjonen.
+    </script>
 
-      <div class="results">
-        <!-- omfanger overskrift for resultater -->
-        <h2>Form Data</h2>
-        <!-- overskrift for data resultater -->
-        <pre></pre>
-        <!-- element for fremvisning av resultater fra spørreskjema -->
-      </div>
-      <script>
-        // Hentet fra https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch (2022-01-11)
-        async function postData(url = "", data = {}) {
-          const response = await fetch(url, {
-            method: "POST", // POST blir brukt til å sende data til en server for å opprette/oppdatere en ressurs.
-            mode: "cors", // "This is used to determine if cross-origin requests lead to valid responses, and which properties of the response are readable." (https://developer.mozilla.org/en-US/docs/Web/API/Request/mode)
-            cache: "no-cache", // *default, no-cache, reload, force-cache,only-if-cached
-            credentials: "same-origin", // include, *same-origin, omit
-            headers: {
-              "Content-Type": "application/json",
-              // 'Content-Type': Indikerer at forespørselens "body" format er JSON.
-            },
-            redirect: "follow", // manual, *follow, error
-            referrerPolicy: "no-referrer", // Referrer overskriften vil bli overlatt, og sendte data vil ikke inneholde noe henvisninginformasjon.
-            body: JSON.stringify(data), // body data type must match"Content-Type"header
-          });
-          return response.json(); // parses JSON response into native JavaScriptobjects
-        }
-
-        function handleSubmit(event) {
-          //Denne funksjonen fungerer når man trykker "submitt" knappen. Denne funksjonen behandler dataen, og sender det til eksternal server.
-          event.preventDefault();
-          const data = new FormData(event.target); //Denne variabelen blir lik til en JS-objekt som får data fra event parameter.
-          const formJSON = Object.fromEntries(data.entries()); //fromEntries funksjonen tar en dataliste og endrer det til en JS-objekt.
-          const results = document.querySelector(".results pre");
-          postData("https://bacit.info/", formJSON).then((data) => {
-            //Denne funksjonen vi implementerte lengre oppe, som sender data til eksternal server, som JSON format.
-            results.innerText = JSON.stringify(data, null, 2); //Denne koden gir/viser hva som ble sendt til eksternal server.
-          });
-        }
-        const form = document.querySelector("form");
-        form.addEventListener("submit", handleSubmit); //Når man trykker submit, starter handleSubmit funksjonen.
-      </script>
-
-      <div class="copy">
-        <!-- conteiner for "coperights" -->
-        <h9 style="color: white">Copyright &copy; 2022 Gruppe 10 A</h9>
-      </div>
+    <div class="copy">
+      <!-- conteiner for "coperights" -->
+      <h9 style="color: white">Copyright &copy; 2022 Gruppe 10 A</h9>
     </div>
   </body>
 </html>
