@@ -120,7 +120,7 @@
       context.fillText("Ikke kontakt meg utenfor arbeidstid", 580, 500);
       context.fillText("Trenger oversikt", 0, 550);
       context.fillText("Tar det som det kommer", 580, 550);
-      //context.setLineDash([4,2])
+
       context.moveTo(165, 50); // flytter path til et spesifik punktet i canvas ute å tegne noe
       context.lineTo(565, 50); // tegner en linje
 
@@ -163,9 +163,7 @@
           return response.json(); // data kommer som en json format fra server
         })
         .then(function (element) {
-          console.log(element);
           let respArray = Object.entries(element); // her blir json formaten endret til en arraylist slik at de blir lettere å gå gjennom listen
-          console.log(respArray);
           drawCircle(respArray, 0);
         });
       fetch(
@@ -175,7 +173,6 @@
           return response.json();
         })
         .then(function (element) {
-          console.log(element);
           let respArray = Object.entries(element);
           drawCircle(respArray, 25);
         });
@@ -186,7 +183,6 @@
           return response.json();
         })
         .then(function (element) {
-          console.log(element);
           let respArray = Object.entries(element);
           drawCircle(respArray, 50);
         });
@@ -197,7 +193,6 @@
           return response.json();
         })
         .then(function (element) {
-          console.log(element);
           let respArray = Object.entries(element);
           drawCircle(respArray, 75);
         });
@@ -208,7 +203,6 @@
           return response.json();
         })
         .then(function (element) {
-          console.log(element);
           let respArray = Object.entries(element);
           drawCircle(respArray, 100);
         });
@@ -219,7 +213,6 @@
           return response.json();
         })
         .then(function (element) {
-          console.log(element);
           let respArray = Object.entries(element);
           drawCircle(respArray, 125);
         });
@@ -230,7 +223,6 @@
           return response.json();
         })
         .then(function (element) {
-          console.log(element);
           let respArray = Object.entries(element);
           drawCircle(respArray, 150);
         });
@@ -272,7 +264,6 @@
           if (array[i][0] === "MoNa") {
             // sjekker om det er riktig keyword og tegner sirkelen etter verdien dersom key er riktig
             let newX = (400 * parseInt(array[i][1])) / 100 + x; // justerer verdien fordi input og out put linjer er ulike lengder
-            console.log(array[i][1]);
             context.beginPath();
             context.arc(newX, y, r, 0, Math.PI * 2, false);
             context.fillStyle = colorX;
@@ -283,7 +274,6 @@
             context.closePath();
           } else if (array[i][0] === "SaAl") {
             let newX = (400 * parseInt(array[i][1])) / 100 + x;
-            console.log(array[i][1]);
             context.beginPath();
             context.arc(newX, y + 50, r, 0, Math.PI * 2, false);
             context.fillStyle = colorX;
@@ -294,7 +284,6 @@
             context.closePath();
           } else if (array[i][0] === "FaFl") {
             let newX = (400 * parseInt(array[i][1])) / 100 + x;
-            console.log(array[i][1]);
             context.beginPath();
             context.arc(newX, y + 100, r, 0, Math.PI * 2, false);
             context.fillStyle = colorX;
@@ -305,7 +294,6 @@
             context.closePath();
           } else if (array[i][0] === "OnSa") {
             let newX = (400 * parseInt(array[i][1])) / 100 + x;
-            console.log(array[i][1]);
             context.beginPath();
             context.arc(newX, y + 150, r, 0, Math.PI * 2, false);
             context.fillStyle = colorX;
@@ -316,7 +304,6 @@
             context.closePath();
           } else if (array[i][0] === "BaPo") {
             let newX = (400 * parseInt(array[i][1])) / 100 + x;
-            console.log(array[i][1]);
             context.beginPath();
             context.arc(newX, y + 200, r, 0, Math.PI * 2, false);
             context.fillStyle = colorX;
@@ -327,7 +314,6 @@
             context.closePath();
           } else if (array[i][0] === "MuMe") {
             let newX = (400 * parseInt(array[i][1])) / 100 + x;
-            console.log(array[i][1]);
             context.beginPath();
             context.arc(newX, y + 250, r, 0, Math.PI * 2, false);
             context.fillStyle = colorX;
@@ -338,7 +324,6 @@
             context.closePath();
           } else if (array[i][0] === "SnGå") {
             let newX = (400 * parseInt(array[i][1])) / 100 + x;
-            console.log(array[i][1]);
             context.beginPath();
             context.arc(newX, y + 300, r, 0, Math.PI * 2, false);
             context.fillStyle = colorX;
@@ -349,7 +334,6 @@
             context.closePath();
           } else if (array[i][0] === "AvRi") {
             let newX = (400 * parseInt(array[i][1])) / 100 + x;
-            console.log(array[i][1]);
             context.beginPath();
             context.arc(newX, y + 350, r, 0, Math.PI * 2, false);
             context.fillStyle = colorX;
@@ -360,7 +344,6 @@
             context.closePath();
           } else if (array[i][0] === "AlEn") {
             let newX = (400 * parseInt(array[i][1])) / 100 + x;
-            console.log(array[i][1]);
             context.beginPath();
             context.arc(newX, y + 400, r, 0, Math.PI * 2, false);
             context.fillStyle = colorX;
@@ -371,7 +354,6 @@
             context.closePath();
           } else if (array[i][0] === "AkIk") {
             let newX = (400 * parseInt(array[i][1])) / 100 + x;
-            console.log(array[i][1]);
             context.beginPath();
             context.arc(newX, y + 450, r, 0, Math.PI * 2, false);
             context.fillStyle = colorX;
@@ -382,7 +364,6 @@
             context.closePath();
           } else if (array[i][0] === "OvKo") {
             let newX = (400 * parseInt(array[i][1])) / 100 + x;
-            console.log(array[i][1]);
             context.beginPath();
             context.arc(newX, y + 500, r, 0, Math.PI * 2, false);
             context.fillStyle = colorX;
@@ -396,34 +377,17 @@
       }
     </script>
     <script>// DENNE SCRIPTEN ER FOR TESTING OG INKLUDERER NOEN EKSEMPLER FOR TESTER SOM BLE KJØRTE UNDER UTVIKLINGEN
-    /*   {
-        "navn": "john",
-       "MoNa": "73",
-        "SaAl": "21",
-        "FaFl": "72",
-        "OnSa": "12",
-        "BaPo": "80",
-        "MuMe": "38",
-        "SnGå": "72",
-        "AvRi": "28",
-        "AlEn": "86",
-        "AkIk": "60",
-        "OvKo": "77",
-        "trxid": "fb43a75ceba157b4ff7b755ae4486e9e",
-        "time": "20221211140559"
-    }*/
     let navnInput = "JOHN";
     let numInput = 38;
     fetch('https://bacit.info/hwr/20221211140559-fb43a75ceba157b4ff7b755ae4486e9e.json')
             .then(function (resp){
               return resp.json();
-
             })
             .then (function (element){
-              console.log(element);
               let array = Object.entries(element);
               let msg = "testen er feil";
-              console.assert(navnInput ===array[0][1].toUpperCase(), msg);
+              console.assert(navnInput ===array[0][1].toUpperCase(), msg);//assert funksjonen sjekker  om utrykket er riktig eller feil.
+              //hvis utrykket er feil skriver en gitt feilmelding på consolen eller gjør ingenting.
               console.assert(numInput === parseInt(array[6][1]), msg );
               console.log("testen er godkjent");
             });
