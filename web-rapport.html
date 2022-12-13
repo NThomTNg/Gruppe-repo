@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -66,6 +66,7 @@
         color: black;
         padding: 20px;
         border-radius: 10px;
+        line-height: 1.5;
         background-color: rgb(91, 103, 200, 0.3);
       }
     </style>
@@ -81,12 +82,11 @@
     <hr />
 
     <p>
-      Dette er en visuell fremstilling av resultatene til alle medlemmer.
-      Svarene fra hver enkelt spørsmål viser til hvordan samarbeid mellom hver
-      enkelt individ kan fungere best mulig i et større sammenheng. Punktene som
-      ligger mest på utlkanten av linjene viser til de medlemmene som har mest
-      ulike vaner og - eller som jobber på de mest forkjsellige måter i forhold
-      til hverandre.
+      Dette er en visuell fremstilling av resultatene til alle medlemmer av
+      Gruppe 10A. Svarene fra hver enkelt spørsmål viser hvordan samarbeid
+      mellom hver medlemm kan fungere best mulig i prosjektarbeid. Punktene er
+      basert på hva hver medlemm har svart i Web-Form. Web-rapport viser veldig
+      klart vaner og preferanser til hvert medlemm.
     </p>
     <canvas id="report" class="canvas" width="1000px" height="850px"></canvas>
     <!-- det er laget et område ved bruk av canvas api for å tegne -->
@@ -376,21 +376,24 @@
         }
       }
     </script>
-    <script>// DENNE SCRIPTEN ER FOR TESTING OG INKLUDERER NOEN EKSEMPLER FOR TESTER SOM BLE KJØRTE UNDER UTVIKLINGEN
-    let navnInput = "JOHN";
-    let numInput = 38;
-    fetch('https://bacit.info/hwr/20221211140559-fb43a75ceba157b4ff7b755ae4486e9e.json')
-            .then(function (resp){
-              return resp.json();
-            })
-            .then (function (element){
-              let array = Object.entries(element);
-              let msg = "testen er feil";
-              console.assert(navnInput ===array[0][1].toUpperCase(), msg);//assert funksjonen sjekker  om utrykket er riktig eller feil.
-              //hvis utrykket er feil skriver en gitt feilmelding på consolen eller gjør ingenting.
-              console.assert(numInput === parseInt(array[6][1]), msg );
-              console.log("testen er godkjent");
-            });
+    <script>
+      // DENNE SCRIPTEN ER FOR TESTING OG INKLUDERER NOEN EKSEMPLER FOR TESTER SOM BLE KJØRTE UNDER UTVIKLINGEN
+      let navnInput = "JOHN";
+      let numInput = 38;
+      fetch(
+        "https://bacit.info/hwr/20221211140559-fb43a75ceba157b4ff7b755ae4486e9e.json"
+      )
+        .then(function (resp) {
+          return resp.json();
+        })
+        .then(function (element) {
+          let array = Object.entries(element);
+          let msg = "testen er feil";
+          console.assert(navnInput === array[0][1].toUpperCase(), msg); //assert funksjonen sjekker  om utrykket er riktig eller feil.
+          //hvis utrykket er feil skriver en gitt feilmelding på consolen eller gjør ingenting.
+          console.assert(numInput === parseInt(array[6][1]), msg);
+          console.log("testen er godkjent");
+        });
     </script>
   </body>
 </html>
