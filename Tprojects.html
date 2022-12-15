@@ -1,159 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><!-- starten på første seksjon i koden med informasjon om siden sin egenskaper-->
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>How we roll - Tidligere prosjekter</title>
-  <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-          href="https://fonts.googleapis.com/css2?family=Abyssinica+SIL&display=swap"
-          rel="stylesheet"
-  />
-  <style>
-    /*omfanger hele siden*/
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background-color: #5b6796;
-      overflow-y: scroll;
-    }
-    .topnav {
-      overflow: hidden;/*begrenser størrelse*/
-      position: fixed;/*Gjør navigation bar fixed, altså den flytter seg med skjermen når man scroller */
-      width: 100%;/*Dekker hele skjermen, lengden*/
-      top: 0;/* Legger den helt øverst på siden*/
-      background-color: lightblue;
-    }
+  <head>
+    <!-- starten på første seksjon i koden med informasjon om siden sin egenskaper-->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>How we roll - Tidligere prosjekter</title>
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Abyssinica+SIL&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /*omfanger hele siden*/
+      body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: #5b6796;
+        overflow-y: scroll;
+      }
+      .topnav {
+        overflow: hidden; /*begrenser størrelse*/
+        position: fixed; /*Gjør navigation bar fixed, altså den flytter seg med skjermen når man scroller */
+        width: 100%; /*Dekker hele skjermen, lengden*/
+        top: 0; /* Legger den helt øverst på siden*/
+        background-color: lightblue;
+      }
 
-    .topnav a {
-      /*Horisontal navigation bar er hentet fra w3schools.com*/
-      float: left;
-      color: #f2f2f2;
-      text-align: center;
-      padding: 14px 16px;
-      text-decoration: none; /*Ingen dekorasjon på teksten, tar vekk understreken*/
-      font-size: 17px; /*Setter leselig tekststørrelse*/
-    }
+      .topnav a {
+        /*Horisontal navigation bar er hentet fra w3schools.com*/
+        float: left;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none; /*Ingen dekorasjon på teksten, tar vekk understreken*/
+        font-size: 17px; /*Setter leselig tekststørrelse*/
+      }
 
-    .topnav a:hover {
-      /*hoved når pilen er over elementet*/
-      background-color: #ddd;
-      color: white;
-    }
+      .topnav a:hover {
+        /*hoved når pilen er over elementet*/
+        background-color: #ddd;
+        color: white;
+      }
 
-    .topnav a.active {
-      /*blir aktiv når man trykker*/
-      background-color: #ddd;
-      color: white;
-    }
+      .topnav a.active {
+        /*blir aktiv når man trykker*/
+        background-color: #ddd;
+        color: white;
+      }
 
-    h2 {
-      color: white;
-      text-align: center;
-      margin-top: 68px;
-    }
-    hr {
-      width: 80%;
-      border: 1px solid white;
-    }
+      h2 {
+        color: white;
+        text-align: center;
+        margin-top: 68px;
+      }
+      hr {
+        width: 80%;
+        border: 1px solid white;
+      }
 
-    #underTittel {
-      margin: 3% 10% 5% 10%;
-      color: white;
-      padding: 20px;
-      border-radius: 10px;
-      background-color: rgba(232, 232, 235, 0.3);
-      text-align: center;
-      font-size: 17px;
-      font-weight: lighter;
-    }
-    #utInfo {
-      align-items: center;
-      display: flex;
-      justify-content: center;
-      color: white;
-    }
-    #bildeViser {
+      #underTittel {
+        margin: 3% 10% 5% 10%;
+        color: white;
+        padding: 20px;
+        border-radius: 10px;
+        background-color: rgba(232, 232, 235, 0.3);
+        text-align: center;
+        font-size: 17px;
+        font-weight: lighter;
+      }
+      #utInfo {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        color: white;
+      }
+      #bildeViser {
+        margin: auto;
+        margin-bottom: 40px;
+        display: block;
+      }
+      .knapper {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+      }
 
-      margin: auto;
-      margin-bottom: 40px;
-      display: block;
-    }
-    .knapper {
-      align-items: center;
-      display: flex;
-      justify-content: center;
-    }
+      input[type="button"] {
+        margin: 5px;
+        padding: 3px 8px 3px 8px;
+        border-radius: 5px;
+        border-style: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="topnav">
+      <!-- Dette er navigasjons baren-->
+      <a href="index.html">Hjem</a>
+      <a href="input.html">Web-Form</a>
+      <a href="web-rapport.html">Web-Rapport</a>
+      <a class="active" href="Tprojects.html">Tidligere prosjekter</a>
+    </div>
+    <div class="text-over">
+      <!-- tittel, med strek under, og tekst-->
+      <h2>How We Roll</h2>
+      <hr />
 
-    input[type="button"] {
-      margin: 5px;
-      padding: 3px 8px 3px 8px;
-      border-radius: 5px;
-      border-style: hidden;
-    }
-  </style>
-</head>
-<body>
+      <p id="underTittel">
+        Vi ønsker å introdusere et tidligere prosjekt som vi i gruppen 10A har
+        jobbet med, i dette prosjektet har vi skapt ulike typer nasjonalflagg
+        gjennom å bruke en variasjon av ulike design-metoder.
+        <br />
+        <br />
+        Velg hvilket flagg du ønsker å se.
+      </p>
+    </div>
+    <div class="knapper">
+      <!-- knappene som er knyttet opp til de ulike funksjonene (onclick) -->
+      <input type="button" id="tyrkia" value="Tyrkia" />
+      <input type="button" id="russland" value="Russland" />
+      <input type="button" id="estonia" value="Estland" />
+    </div>
 
-<div class="topnav"> <!-- Dette er navigasjons baren-->
-  <a href="index.html">Hjem</a>
-  <a href="input.html">Web-Form</a>
-  <a href="web-rapport.html">Web-Rapport</a>
-  <a class="active" href="Tprojects.html">Tidligere prosjekter</a>
-</div>
-<div class="text-over"> <!-- tittel, med strek under, og tekst-->
-  <h2>How We Roll</h2>
-  <hr />
-
-  <p id="underTittel">
-    Vi ønsker å introdusere et tidligere prosjekt som vi i gruppen 10A har
-    jobbet med, i dette prosjektet har vi skapt ulike typer nasjonalflagg
-    gjennom å bruke en variasjon av ulike design-metoder.
+    <p id="utInfo"></p>
+    <!-- Her kommer informasjonen ut etter å trykket på knappene-->
     <br />
-    <br>
-    Velg hvilket flagg du ønsker å se.
-  </p>
-</div>
-<div class="knapper"> <!-- knappene som er knyttet opp til de ulike funksjonene (onclick) -->
-  <input type="button" id="tyrkia" value="Tyrkia" />
-  <input type="button" id="russland" value="Russland" />
-  <input type="button" id="estonia" value="Estonia" />
-</div>
+    <img id="bildeViser" width="300px" />
+    <!-- Her vises bildene som tilhører den spesifikke knappen -->
 
-<p id="utInfo"></p> <!-- Her kommer informasjonen ut etter å trykket på knappene-->
-<br />
-<img id="bildeViser" width="300px" /> <!-- Her vises bildene som tilhører den spesifikke knappen -->
+    <script>
+      //De ulike variablene
+      var bildeViser = document.getElementById("bildeViser");
+      var tyrkia = document.getElementById("tyrkia");
+      var utInfo = document.getElementById("utInfo");
+      var russland = document.getElementById("russland");
+      var estonia = document.getElementById("estonia");
 
-<script>
-   //De ulike variablene
-  var bildeViser = document.getElementById("bildeViser");
-  var tyrkia = document.getElementById("tyrkia");
-  var utInfo = document.getElementById("utInfo");
-  var russland = document.getElementById("russland");
-  var estonia = document.getElementById("estonia");
+      tyrkia.onclick = function () {
+        //Når du trykker på knappen tyrkia utføres handlingene under - både teksten vises og bilde kaldt Tyrkia
+        utInfo.innerHTML =
+          "Du har valgt Tyrkia, under ser du flagget laget av vår gruppe med bruk av canvas.";
+        spillBilde("Tyrkia");
+      };
+      russland.onclick = function () {
+        utInfo.innerHTML =
+          "Du har valgt Russland, under ser du flagget laget av vår gruppe med bruk av p-style.";
+        spillBilde("Russland");
+      };
+      estonia.onclick = function () {
+        utInfo.innerHTML =
+          "Du har valgt Estonia, under ser du flagget laget av vår gruppe med bruk av CSS.";
+        spillBilde("Estonia");
+      };
 
-  tyrkia.onclick = function () { //Når du trykker på knappen tyrkia utføres handlingene under - både teksten vises og bilde kaldt Tyrkia
-    utInfo.innerHTML =
-            "Du har valgt Tyrkia, under ser du flagget laget av vår gruppe med bruk av canvas.";
-    spillBilde("Tyrkia");
-  };
-  russland.onclick = function () {
-    utInfo.innerHTML =
-            "Du har valgt Russland, under ser du flagget laget av vår gruppe med bruk av p-style.";
-    spillBilde("Russland");
-  };
-  estonia.onclick = function () {
-    utInfo.innerHTML =
-            "Du har valgt Estonia, under ser du flagget laget av vår gruppe med bruk av CSS.";
-    spillBilde("Estonia");
-  };
-
-  function spillBilde(navn) { //Denne funksjonen gjør at funksjonene over henter bildene fra for eksempel "img/Tyrkia.PNG", og er en ekstra funksjon, en annen måte å løse dette på er å ha hele filplasseringen over.
-    bildeViser.src = "img/"+navn+".PNG";
-  }
-</script>
-</body>
+      function spillBilde(navn) {
+        //Denne funksjonen gjør at funksjonene over henter bildene fra for eksempel "img/Tyrkia.PNG", og er en ekstra funksjon, en annen måte å løse dette på er å ha hele filplasseringen over.
+        bildeViser.src = "img/" + navn + ".PNG";
+      }
+    </script>
+  </body>
 </html>
