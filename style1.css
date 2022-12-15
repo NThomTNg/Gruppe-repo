@@ -77,6 +77,7 @@
   background-size: cover;
   background-color: rgba(21, 38, 105, 0.7);
   border: 1px;
+  overflow-y: hidden;
   overflow-x: hidden; /*Problem med whitespace på denne section, overflow hjalp dette*/
 }
 .row {
@@ -114,7 +115,6 @@ img {
 }
 h3 {
   display: flex;
- 
 }
 .Medlemmer-col:hover {
   box-shadow: 0 0 20px 0px rgba(160, 160, 160, 0.7);
